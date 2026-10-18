@@ -56,6 +56,8 @@ export default function Home() {
           {projects.map((p) => (
             <li key={p.slug}>
               <Link href={`/projects/${p.slug}`} className="project-link">
+                <span className="lane">{p.tags.join(" · ")}</span>
+                <h2>{p.title}</h2>
                 <figure className="project-well">
                   <Image
                     src={p.preview.src}
@@ -65,8 +67,6 @@ export default function Home() {
                     sizes="(min-width: 768px) 40vw, 90vw"
                   />
                 </figure>
-                <span className="lane">{p.tags.join(" · ")}</span>
-                <h2>{p.title}</h2>
                 <p>{p.summary}</p>
               </Link>
             </li>
