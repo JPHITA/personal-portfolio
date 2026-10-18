@@ -32,12 +32,12 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <ChassisPanel>
       <article className="detail">
-        <div>
-          <Link href="/" className="detail-back">
-            ← Chassis face
-          </Link>
-          <h1 className="detail-title">{project.title}</h1>
-          <Body />
+        <Link href="/" className="detail-back">
+          ← Chassis face
+        </Link>
+        <h1 className="detail-title">{project.title}</h1>
+        <Body />
+        <div className="detail-meta">
           <ul className="detail-tags">
             {project.tags.map((tag, i) => (
               <li key={tag}>

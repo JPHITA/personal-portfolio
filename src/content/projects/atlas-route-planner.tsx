@@ -32,41 +32,45 @@ const figures = [
 
 export function ProjectBody() {
   return (
-    <>
-      <div className="detail-section">
-        <h2>Problem</h2>
-        <p>
-          Operators needed a readable way to compare candidate routes without
-          drowning in raw hop tables. (Synthetic scenario — not a shipped
-          product claim.)
-        </p>
+    <div className="detail-deck">
+      <div className="detail-copy">
+        <div className="detail-section">
+          <h2>Problem</h2>
+          <p>
+            Operators needed a readable way to compare candidate routes without
+            drowning in raw hop tables. (Synthetic scenario — not a shipped
+            product claim.)
+          </p>
+        </div>
+        <div className="detail-section">
+          <h2>Approach</h2>
+          <p>
+            A dark instrument face: ranked lanes, labeled skill-like indexes for
+            constraints, and on-page route sketches instead of off-site galleries.
+          </p>
+        </div>
+        <div className="detail-section">
+          <h2>Outcome</h2>
+          <p>
+            Hiring managers can scan the project story and open the panel for
+            problem / approach / outcome. Synthetic demo only.
+          </p>
+        </div>
       </div>
-      <div className="detail-section">
-        <h2>Approach</h2>
-        <p>
-          A dark instrument face: ranked lanes, labeled skill-like indexes for
-          constraints, and on-page route sketches instead of off-site galleries.
-        </p>
+      <div className="detail-media">
+        {figures.map((fig, i) => (
+          <figure key={fig.caption} className="detail-figure">
+            <Image
+              src={fig.src}
+              alt={fig.alt}
+              width={960}
+              height={540}
+              priority={i === 0}
+            />
+            <figcaption>{fig.caption}</figcaption>
+          </figure>
+        ))}
       </div>
-      <div className="detail-section">
-        <h2>Outcome</h2>
-        <p>
-          Hiring managers can scan the project story and open the panel for
-          problem / approach / outcome. Synthetic demo only.
-        </p>
-      </div>
-      {figures.map((fig, i) => (
-        <figure key={fig.caption} className="detail-figure">
-          <Image
-            src={fig.src}
-            alt={fig.alt}
-            width={960}
-            height={540}
-            priority={i === 0}
-          />
-          <figcaption>{fig.caption}</figcaption>
-        </figure>
-      ))}
-    </>
+    </div>
   );
 }

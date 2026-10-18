@@ -30,13 +30,8 @@ export default function Home() {
           Skill banks · labeled
         </p>
         <ul className="skills-list">
-          {primarySkills.map((skill, i) => (
-            <li key={skill}>
-              <span className="idx" aria-hidden="true">
-                T{i + 1}
-              </span>
-              {skill}
-            </li>
+          {primarySkills.map((skill) => (
+            <li key={skill}>{skill}</li>
           ))}
         </ul>
         {moreSkills.length > 0 ? (
@@ -45,13 +40,8 @@ export default function Home() {
               More banks · {moreSkills.length}
             </summary>
             <ul className="skills-list">
-              {moreSkills.map((skill, i) => (
-                <li key={skill}>
-                  <span className="idx" aria-hidden="true">
-                    T{PRIMARY_SKILL_COUNT + i + 1}
-                  </span>
-                  {skill}
-                </li>
+              {moreSkills.map((skill) => (
+                <li key={skill}>{skill}</li>
               ))}
             </ul>
           </details>

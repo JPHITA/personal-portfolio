@@ -23,34 +23,38 @@ const figures = [
 
 export function ProjectBody() {
   return (
-    <>
-      <div className="detail-section">
-        <h2>Problem</h2>
-        <p>
-          Cross-service traces were readable only after exporting dumps. The ask
-          was an on-page bench with fixed bank order. (Synthetic.)
-        </p>
+    <div className="detail-deck">
+      <div className="detail-copy">
+        <div className="detail-section">
+          <h2>Problem</h2>
+          <p>
+            Cross-service traces were readable only after exporting dumps. The ask
+            was an on-page bench with fixed bank order. (Synthetic.)
+          </p>
+        </div>
+        <div className="detail-section">
+          <h2>Approach</h2>
+          <p>
+            Indexed signal banks, mono labels, and embedded waveform placeholders
+            that stay on the detail page.
+          </p>
+        </div>
+        <div className="detail-section">
+          <h2>Outcome</h2>
+          <p>
+            Second proof point for craft vocabulary without inventing employers or
+            metrics. Synthetic demo only.
+          </p>
+        </div>
       </div>
-      <div className="detail-section">
-        <h2>Approach</h2>
-        <p>
-          Indexed signal banks, mono labels, and embedded waveform placeholders
-          that stay on the detail page.
-        </p>
+      <div className="detail-media">
+        {figures.map((fig) => (
+          <figure key={fig.caption} className="detail-figure">
+            <Image src={fig.src} alt={fig.alt} width={960} height={540} priority />
+            <figcaption>{fig.caption}</figcaption>
+          </figure>
+        ))}
       </div>
-      <div className="detail-section">
-        <h2>Outcome</h2>
-        <p>
-          Second proof point for craft vocabulary without inventing employers or
-          metrics. Synthetic demo only.
-        </p>
-      </div>
-      {figures.map((fig) => (
-        <figure key={fig.caption} className="detail-figure">
-          <Image src={fig.src} alt={fig.alt} width={960} height={540} priority />
-          <figcaption>{fig.caption}</figcaption>
-        </figure>
-      ))}
-    </>
+    </div>
   );
 }

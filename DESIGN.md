@@ -107,6 +107,18 @@ components:
     textColor: "{colors.steel-dim}"
     rounded: "{rounded.none}"
     padding: "0"
+  detail-back:
+    backgroundColor: "transparent"
+    textColor: "{colors.steel-dim}"
+    typography: "{typography.label}"
+    rounded: "{rounded.none}"
+    padding: "0.35rem 0"
+  detail-back-hover:
+    backgroundColor: "transparent"
+    textColor: "{colors.glow}"
+    typography: "{typography.label}"
+    rounded: "{rounded.none}"
+    padding: "0.35rem 0"
 ---
 
 # Design System: Nixie Counter
@@ -125,8 +137,8 @@ Density is laboratory-tight: mono labels with wide tracking, short supporting co
 - Glow (`#ff6a1a`) reserved for specialty, lab labels, focus, and hover signal
 - Hero is CV one-liner + Email / LinkedIn / GitHub (icons on hero rail); no lead project, no decorative tube bank
 - Home project banks carry inset tube-well previews; detail pages reuse the same well treatment for proof figures
-- Skills show a primary bank strip with the rest behind a disclosure control
-- Foot rail of uppercase contact links with glow underline on hover
+- Skills are word-first (no T-indexes): primary strip of four names, remainder behind `More banks · N`
+- Foot rail of uppercase contact links with glow underline on hover (contacts remain synthetic scaffolding by intent)
 
 ## Colors
 
@@ -141,10 +153,10 @@ One accent voice on a blackened-steel ground; plate and steel carry readable hie
 - **Chassis Steel** (`{colors.chassis-steel}`): Outer chassis border color.
 - **Chassis Edge** (`{colors.chassis-edge}`): Hairline instrument rules, scrollbar thumb.
 - **Steel** (`{colors.steel}`): Body/supporting copy.
-- **Steel Dim** (`{colors.steel-dim}`): Indexes, lanes, foot mark, default contact links, synth scaffolding note. Tuned for ≥4.5:1 on chassis (`#747a82`; prior `#6a7078` failed AA at ~3.9:1).
+- **Steel Dim** (`{colors.steel-dim}`): Lanes, foot mark, default contact links, synth scaffolding note, detail tag indexes. Tuned for ≥4.5:1 on chassis (`#747a82`; prior `#6a7078` failed AA at ~3.9:1).
 - **Plate** (`{colors.plate}`): Primary display text — name, project titles.
 - **Plate Soft** (`{colors.plate-soft}`): Default body foreground and skill names.
-- **Tube Well** (`{colors.tube-well}`): Inset media well behind detail figures.
+- **Tube Well** (`{colors.tube-well}`): Inset media well behind home project previews and detail figures.
 - **Selection Wash** (`{colors.selection}`): Text selection highlight.
 
 ### Named Rules
@@ -158,19 +170,19 @@ One accent voice on a blackened-steel ground; plate and steel carry readable hie
 **Body Font:** IBM Plex Mono (with ui-monospace, monospace) — weights 400 / 600 loaded; body uses 400  
 **Label/Mono Font:** IBM Plex Mono (same stack)
 
-**Character:** Instrument face: geometric display for the reading that matters; mono for every label, index, and rail. Tight leading on titles; wide tracking on uppercase labs.
+**Character:** Instrument face: geometric display for the reading that matters; mono for every label, lane, and rail. Tight leading on titles; wide tracking on uppercase labs.
 
 ### Hierarchy
 - **Display** (700, `clamp(2rem, 5vw, 3rem)`, lh 1.05): Reserved scale; not used on the current home hero.
 - **Headline** (700, `clamp(1.5rem, 3.5vw, 2.25rem)`, lh 1.15, tracking `0.02em`): Brand name on chassis cap (`.cap-title`). Detail title uses `clamp(1.75rem, 4vw, 2.5rem)` / lh 1.1.
 - **Title** (700, `1.25rem`): Project bank headings (`.project-link h2`).
 - **Body** (400, `0.875rem`, lh 1.55): Hero one-liner (`.hero-copy`, `clamp(0.9375rem, 1.35vw, 1.0625rem)`, lh 1.5; measure `min(58ch, 100%)` → `min(70ch, 55%)` at 900px → `min(90ch, 75%)` at 1280px); detail body `0.875rem` / lh 1.6 (max ~62ch); project summary `0.8125rem` / lh 1.5 (max ~48ch).
-- **Label** (400, `0.75rem` default for interactive rails; `0.6875rem` for lab signals / indexes / figcaptions; tracking `0.14em`–`0.18em`, uppercase): Specialty (`.cap-role` at `0.75rem`), lab labels, hero/foot contact rails, lanes, back link, synth-note, figcaption.
+- **Label** (400, `0.75rem` for interactive rails / specialty / synth-note / lanes / back / skills-more summary; `0.6875rem` for lab signals, figcaptions, and detail tag indexes; tracking `0.14em`–`0.18em`, uppercase where instrument): Specialty (`.cap-role` at `0.75rem`), lab labels, hero/foot contact rails, project lanes, back link, synth-note, figcaption.
 
 ### Named Rules
 **The Cap Specialty Rule.** Specialty is always the glow uppercase label on the chassis cap — never demoted to body steel and never replaced by a marketing eyebrow.
 
-**The Index Rule.** Skill banks carry tube-style indexes (`T1`…); keep them steel-dim and smaller than the skill name.
+**The Word-First Skills Rule.** Home skill banks list names only in plate-soft — no `.idx` / `T1` spans. Tube-style indexes stay on detail meta tags only, steel-dim and smaller than the tag name.
 
 ## Layout
 
@@ -180,16 +192,18 @@ Home hero (`.panel-home .hero`): `min-height: 30vh`, column flex, vertically cen
 
 Hero distribution (`.hero-body`): `<640` column stack; `640+` row, `align-items: center`, gap cluster (intro `flex: 1`, max ~58ch; contacts `flex-shrink: 0`; no `justify` so left cluster stays tight); `900+` `justify-content: space-between` with intro max `min(70ch, 55%)`; `1280+` intro max `min(90ch, 75%)` so contacts sit on the right without a dead right half or a hollow center.
 
-Breakpoints observed: 640px (hero body row, foot row), 768px (panel padding/border, project grid 2-col), 900px (hero `space-between` + hero padding), 1280px (hero intro measure grows). Detail stays single-column (`max-width: 52rem`); Body owns the figure array. Section dividers are 1px `chassis-edge` top borders. Skills wrap with gap `0.875rem 2rem`; projects grid gap `1rem` → `1.25rem` at 768px.
+Detail fills the chassis rail (no `max-width: 52rem` clamp). `.detail-deck` stacks copy then media below 900px; from 900px it splits `minmax(0, min(42ch, 40%)) | minmax(0, 1fr)` (story measure left, proof wells fill remaining width). Section dividers are 1px `chassis-edge` top borders. Skills wrap with gap `0.875rem 2rem`; projects grid gap `1rem` → `1.25rem` at 768px.
+
+Breakpoints observed: 640px (hero body row, foot row), 768px (panel padding/border, project grid 2-col), 900px (hero `space-between` + hero padding + detail-deck columns), 1280px (hero intro measure grows).
 
 ## Elevation & Depth
 
-Depth is tonal and inset, not floating cards. The panel uses a cover steel-plate image under a dark gradient, plus inset black vignette and a hairline top highlight. Detail figures sit in tube-well with a light inset amber wash — no outer bloom pulse on the home surface.
+Depth is tonal and inset, not floating cards. The panel uses a cover steel-plate image under a dark gradient, plus inset black vignette and a hairline top highlight. Home project previews and detail figures sit in tube-well with a light inset amber wash — no outer bloom pulse on the home surface.
 
 ### Shadow Vocabulary
 - **Panel inset gloom** (`box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(138, 144, 152, 0.08)`): Chassis face depth.
 - **Tube / detail figure well** (`box-shadow: inset 0 0 40px rgba(255, 106, 26, 0.05)`): Soft inset amber on home project previews and detail proof figures.
-- **Contact glow text** (`text-shadow: 0 0 12px rgba(255, 106, 26, 0.35)`): Hover/focus on hero/foot contact links.
+- **Contact glow text** (`text-shadow: 0 0 12px rgba(255, 106, 26, 0.35)`): Hover/focus on hero/foot contact links only — not on `.detail-back`.
 
 ### Named Rules
 **The Inset Well Rule.** Proof imagery lives in tube wells — dark recess + edge rule — never in lifted white cards or floating media frames.
@@ -217,25 +231,27 @@ Interactive surfaces are instrument links and banks, not filled CTA buttons.
 ### Hero CV
 - **Band:** Home-only `min-height: 30vh` with flex-centered `.hero-body`
 - **Body:** One steel one-liner (`.hero-copy`) — synthetic scaffolding until real bio
-- **Contacts:** Same Email / LinkedIn / GitHub rail as the foot (`.hero-contacts` + `.foot-link` at label `0.75rem`); hero passes `withIcons` for 0.75rem inline SVG icons before each label; mid screens cluster after intro (gap); from 900px `space-between` parks contacts on the right; row cross-axis centers one-liner with the rail
+- **Contacts:** Same Email / LinkedIn / GitHub rail as the foot (`.hero-contacts` + `.foot-link` at label `0.75rem`); hero passes `withIcons` for 0.75rem inline SVG icons before each label; mid screens cluster after intro (gap); from 900px `space-between` parks contacts on the right; row cross-axis centers one-liner with the rail. Contact hrefs stay synthetic by intent until real URLs are supplied.
 
 ### Skills Bank
-- **Style:** Edge-top section; wrap list; `Tn` indexes in steel-dim at `0.6875rem`; skill names in plate-soft at `0.9375rem`
-- **Disclosure:** Primary strip shows the first four skills; remainder lives in `.skills-more` (`More banks · N`) with glow `+`/`−` marker
+- **Style:** Edge-top section; wrap list of skill names only (plate-soft at `0.9375rem`) — no `.idx` spans on home
+- **Disclosure:** Primary strip shows the first four skills; remainder lives in `.skills-more` (`More banks · N`) with glow `+`/`−` marker at label `0.75rem`
 
 ### Project Link
 - **Shape:** Top edge rule; glow rule on hover/focus
 - **Preview:** Inset `.project-well` (tube-well + chassis-edge + inset amber) with 16:9 proof schematic before meta
-- **Lane:** Uppercase steel-dim stack tags from project data (not a generic “Bank” label)
-- **Title / summary:** Plate title + steel summary; trailing `.synth-note` disclaimer under the bank list
+- **Lane:** Uppercase steel-dim stack tags from project data at `0.75rem` (not a generic “Bank” label)
+- **Title / summary:** Plate title + steel summary; trailing `.synth-note` disclaimer at `0.75rem` under the bank list
 
 ### Foot / Contact Link
 - **Style:** Uppercase steel-dim at `0.75rem`; padding `0.35rem 0` for hit area; glow color + bottom border + text-shadow on hover/focus (hero + foot); foot rail omits icons
 - **Mark:** “Nixie laboratory counter” in steel-dim (foot only)
 
-### Detail Figure / Back
+### Detail Deck / Figure / Back
+- **Deck:** `.detail-deck` — copy column (problem / approach / outcome) + media column of tube-well figures; single column stacked until 900px, then copy|media split
 - **Figure:** Tube-well background + chassis-edge + light inset amber; full-width image; uppercase figcaption under a top edge rule
-- **Back:** Same glow-underline pattern as foot links (`← Chassis face`) at label size with matching padding
+- **Meta tags:** Optional `Tn` indexes (`.idx`) before each tag name — detail only
+- **Back:** `width: fit-content` / `align-self: flex-start`; label `0.75rem`; glow color + bottom border on hover/focus — text-only signal, no contact text-shadow (`← Chassis face`)
 
 ## Do's and Don'ts
 
@@ -244,9 +260,10 @@ Interactive surfaces are instrument links and banks, not filled CTA buttons.
 - **Do** keep the first viewport as CV one-liner + contact (hero icons allowed); skills and projects as labeled banks below.
 - **Do** put proof imagery in inset tube wells with hard edges (home project previews and detail figures).
 - **Do** keep home hero at content band (`min-height: 30vh`, flex-centered) — not a full-viewport stretch.
+- **Do** keep detail full-rail with `.detail-deck` copy|media from 900px — no 52rem content clamp.
 - **Do** use Chakra Petch only for name and project/detail titles; mono everywhere else.
 - **Do** honor `prefers-reduced-motion` by disabling contact-link transitions.
-- **Do** keep steel-dim ≥4.5:1 on chassis for secondary UI text.
+- **Do** keep steel-dim ≥4.5:1 on chassis for secondary UI text (`#747a82`).
 
 ### Don't:
 - **Don't** flood large surfaces with nixie orange — glow is signal, not a theme wash.
@@ -254,4 +271,5 @@ Interactive surfaces are instrument links and banks, not filled CTA buttons.
 - **Don't** replace plate/steel type roles or swap display/mono pairings.
 - **Don't** add floating badges, kickers, or promo chips on figure media.
 - **Don't** invent filled primary buttons; interaction stays as instrument links and edge rules.
-- **Don't** resurrect a lead-project hero or decorative home tube bank — those patterns are retired.
+- **Don't** resurrect skill T-indexes on the home bank, a lead-project hero, or a decorative home tube bank — those patterns are retired.
+- **Don't** add text-shadow glow to `.detail-back` — back link is color + underline only.
