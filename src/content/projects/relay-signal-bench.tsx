@@ -4,7 +4,6 @@ import type { ProjectMeta } from "./types";
 export const meta: ProjectMeta = {
   slug: "relay-signal-bench",
   title: "Relay Signal Bench",
-  lead: false,
   summary:
     "Synthetic second project: a bench for tracing event relays across services with steel-panel clarity.",
   tags: ["API design", "Observability", "PostgreSQL"],

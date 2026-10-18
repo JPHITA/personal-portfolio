@@ -8,9 +8,8 @@ import type { ProjectMeta } from "./types";
 export const meta: ProjectMeta = {
   slug: "atlas-route-planner",
   title: "Atlas Route Planner",
-  lead: true,
   summary:
-    "Synthetic lead: pathfinding console that treats latency budgets like tube readings — words first, glow second.",
+    "Synthetic bank: pathfinding console that treats latency budgets like tube readings — words first, glow second.",
   tags: ["TypeScript", "Next.js", "System design"],
 };
 
@@ -48,8 +47,8 @@ export function ProjectBody() {
       <div className="detail-section">
         <h2>Outcome</h2>
         <p>
-          Hiring managers can scan the lead story in one viewport and open the
-          panel for problem / approach / outcome. Synthetic demo only.
+          Hiring managers can scan the project story and open the panel for
+          problem / approach / outcome. Synthetic demo only.
         </p>
       </div>
       {figures.map((fig, i) => (

@@ -20,11 +20,11 @@ A personal portfolio that presents who he is, his specialty, skills, and project
 
 ## Positioning
 
-Specialty-led portfolio: projects and craft proof come first; contact is the intended outcome, not passive browsing.
+Specialty-led portfolio: the first viewport carries a short personal intro and contact; projects and craft proof follow so reaching out stays the outcome, not passive browsing.
 
 ## Operating Context
 
-Visited on desktop and mobile web. Hiring managers scan presentation → skills → projects, then use contact or social links. Early builds use placeholder content; real bio, projects, and links replace fakes later without changing structure.
+Visited on desktop and mobile web. Hiring managers scan name + specialty + one-liner → contact → skills → projects. Early builds use placeholder content; real bio, projects, and links replace fakes later without changing structure.
 
 ## Capabilities and Constraints
 

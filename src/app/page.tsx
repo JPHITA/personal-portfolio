@@ -1,31 +1,20 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ChassisPanel } from "@/components/ChassisShell";
-import { getLeadProject, projects, skills } from "@/content/projects";
+import { ChassisPanel, ContactLinks } from "@/components/ChassisShell";
+import { projects, skills } from "@/content/projects";
+
+/** Synthetic CV one-liner — replace when real bio is supplied. */
+const heroLine =
+  "Synthetic intro: full-stack systems work with labeled proof banks — glow as signal, contact when the reading fits.";
 
 export default function Home() {
-  const lead = getLeadProject();
-
   return (
     <ChassisPanel home>
-      <section className="hero" aria-labelledby="lead-title">
-        <div>
-          <Link href={`/projects/${lead.slug}`} className="hero-lead">
-            <h2 id="lead-title" className="hero-intro">
-              {lead.title}
-            </h2>
-            <p className="hero-copy">{lead.summary}</p>
-          </Link>
-        </div>
-        <div className="tube-bank" aria-hidden="true">
-          <Image
-            src="/plates/nixie-tube-bank.png"
-            alt=""
-            width={960}
-            height={540}
-            className="tube-bank-img"
-            priority
-          />
+      <section className="hero" aria-labelledby="hero-line">
+        <div className="hero-body">
+          <p id="hero-line" className="hero-copy">
+            {heroLine}
+          </p>
+          <ContactLinks className="hero-contacts" withIcons />
         </div>
       </section>
 
@@ -53,9 +42,7 @@ export default function Home() {
           {projects.map((p) => (
             <li key={p.slug}>
               <Link href={`/projects/${p.slug}`} className="project-link">
-                <span className="lane">
-                  {p.lead ? "Live count · lead" : "Bank · secondary"}
-                </span>
+                <span className="lane">Bank</span>
                 <h2>{p.title}</h2>
                 <p>{p.summary}</p>
               </Link>

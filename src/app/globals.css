@@ -163,99 +163,87 @@ body {
 }
 
 .hero {
-  display: grid;
-  gap: 1.75rem;
-  align-items: center;
   padding: 1.75rem 0 0.75rem;
-  flex: 1 1 auto;
 }
 
 @media (min-width: 900px) {
   .hero {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
     padding: 2rem 0 0.75rem;
   }
 }
 
-.hero-lead {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  padding: 0.35rem 0.5rem 0.35rem 0;
-  margin: -0.35rem -0.5rem -0.35rem 0;
-  border-left: 2px solid transparent;
-  transition:
-    border-color 200ms ease-out,
-    box-shadow 200ms ease-out,
-    background-color 200ms ease-out;
+.hero-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.hero-lead:hover,
-.hero-lead:focus-visible {
-  border-left-color: var(--glow);
-  background: rgba(255, 106, 26, 0.04);
-  box-shadow: inset 12px 0 24px -18px rgba(255, 106, 26, 0.55);
-  outline: none;
+@media (min-width: 640px) {
+  .hero-body {
+    flex-direction: row;
+    align-items: center;
+    /* ponytail: omit justify so Turbopack media-merge can't let flex-start override 900 space-between */
+    gap: 1.75rem;
+  }
 }
 
-.hero-intro {
-  margin: 0 0 1rem;
-  font-family: var(--font-chakra), system-ui, sans-serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  line-height: 1.05;
-  color: var(--plate);
+@media (min-width: 900px) {
+  .hero-body {
+    justify-content: space-between;
+    gap: clamp(1.75rem, 3vw, 2.75rem);
+  }
 }
 
 .hero-copy {
   margin: 0;
-  font-size: 0.875rem;
-  line-height: 1.55;
+  max-width: min(58ch, 100%);
+  font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
+  line-height: 1.5;
   color: var(--steel);
-  max-width: 38ch;
 }
 
-.tube-bank {
-  position: relative;
-  border: 1px solid var(--chassis-edge);
-  background: var(--tube-well);
-  box-shadow:
-    inset 0 0 40px rgba(0, 0, 0, 0.65),
-    0 0 28px rgba(255, 106, 26, 0.12);
-  overflow: hidden;
-  animation: tube-presence 3.6s ease-in-out infinite;
-}
-
-.tube-bank-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-@keyframes tube-presence {
-  0%,
-  100% {
-    box-shadow:
-      inset 0 0 40px rgba(0, 0, 0, 0.65),
-      0 0 22px rgba(255, 106, 26, 0.1);
-    filter: brightness(0.96);
+@media (min-width: 640px) {
+  .hero-copy {
+    flex: 1 1 auto;
+    min-width: 0;
   }
-  50% {
-    box-shadow:
-      inset 0 0 36px rgba(0, 0, 0, 0.55),
-      0 0 36px rgba(255, 106, 26, 0.22);
-    filter: brightness(1.05);
+}
+
+@media (min-width: 900px) {
+  .hero-copy {
+    max-width: min(70ch, 55%);
   }
+}
+
+@media (min-width: 1280px) {
+  .hero-copy {
+    /* grow measure so space-between gap stays modest on ultra-wide */
+    max-width: min(90ch, 75%);
+  }
+}
+
+.hero-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.15rem 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.foot-link-icon {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.05em;
+  flex-shrink: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tube-bank {
-    animation: none;
-  }
-  .hero-lead {
-    transition: none;
-  }
   .foot-link {
     transition: none;
   }

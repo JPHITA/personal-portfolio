@@ -53,7 +53,3 @@ export const projects: Project[] = [
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
 }
-
-export function getLeadProject() {
-  return projects.find((p) => p.lead) ?? projects[0];
-}

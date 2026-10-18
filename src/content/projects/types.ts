@@ -4,7 +4,6 @@ import type { ComponentType } from "react";
 export type ProjectMeta = {
   slug: string;
   title: string;
-  lead: boolean;
   summary: string;
   tags: string[];
 };
