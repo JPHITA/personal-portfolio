@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Plate Section — first viewport</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Manrope:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#16181A;color:#F5F4F6;font-family:Manrope,sans-serif}
+/* Dark inversion of the annual sheet per steer — ink ground, light type */
+.page{height:100%;padding:0;display:grid;grid-template-rows:72px 1fr auto auto}
+.bar{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-bottom:1px solid #C9C7C4;background:#121416;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.bar a{color:#F5F4F6;text-decoration:none;margin-left:24px}
+.bar .seal{color:#DCDDF3}
+.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:32px;padding:36px 40px 20px;min-height:0}
+.plate{position:relative;background:linear-gradient(145deg,#2a3038,#3a4450);border:1px solid #C9C7C4;min-height:420px}
+.cross{position:absolute;width:16px;height:16px}
+.cross.tl{top:8px;left:8px;border-left:1px solid #C9C7C4;border-top:1px solid #C9C7C4}
+.cross.br{bottom:8px;right:8px;border-right:1px solid #C9C7C4;border-bottom:1px solid #C9C7C4}
+.side{display:flex;flex-direction:column;justify-content:flex-end}
+.side h1{font-size:48px;font-weight:700;letter-spacing:-.02em;line-height:1.05;margin-bottom:12px;font-weight:400}
+.side p{font-size:17px;line-height:1.4;color:#C9C7C4;margin-bottom:20px}
+.side .btn{display:inline-block;background:#F5F4F6;color:#16181A;padding:12px 20px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+.skills{padding:18px 40px;border-top:1px solid #C9C7C4;border-bottom:1px solid #C9C7C4;display:flex;align-items:center;gap:28px;background:#121416}
+.skills .lab{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#DCDDF3;flex-shrink:0}
+.skills ul{display:flex;flex-wrap:wrap;gap:10px 28px;list-style:none;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.06em}
+.foot{padding:16px 40px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#C9C7C4;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="bar">
+    <div>Juan Nicolas Piedrahita Salas · Plate 01</div>
+    <div><span class="seal">Attribution</span><a href="#">Work</a><a href="#">Contact</a></div>
+  </header>
+  <section class="hero">
+    <div class="plate"><span class="cross tl"></span><span class="cross br"></span></div>
+    <aside class="side">
+      <h1>Atlas Route Planner</h1>
+      <p>Full-stack systems. Lead plate registered; skills as sticky mono tokens under it.</p>
+      <a class="btn" href="#">Get in touch</a>
+    </aside>
+  </section>
+  <aside class="skills">
+    <div class="lab">Skills</div>
+    <ul>
+      <li>TypeScript</li>
+      <li>Next.js</li>
+      <li>PostgreSQL</li>
+      <li>System design</li>
+      <li>API design</li>
+      <li>React</li>
+    </ul>
+  </aside>
+  <footer class="foot"><span>Email · LinkedIn · GitHub</span><span>Design annual · dark sheet</span></footer>
+</div>
+</body>
+</html>

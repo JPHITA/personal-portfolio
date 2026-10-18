@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Nixie Counter — first viewport</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#0c0c0e;color:#d8dce0;font-family:"IBM Plex Mono",monospace}
+.panel{height:100%;padding:36px 48px;display:grid;grid-template-rows:auto 1fr auto auto;background:linear-gradient(180deg,#14161a 0%,#0c0c0e 100%);border:12px solid #1a1c20}
+.cap{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid #2a2c30;padding-bottom:16px}
+.cap h1{font-family:"Chakra Petch",sans-serif;font-size:36px;font-weight:700;letter-spacing:.02em;color:#f0f2f4}
+.cap .role{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#ff6a1a}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:32px 0 12px}
+.hero .intro{font-family:"Chakra Petch",sans-serif;font-size:48px;font-weight:700;line-height:1.05;color:#f0f2f4;margin-bottom:16px}
+.hero p{font-size:14px;line-height:1.5;color:#8a9098;max-width:380px}
+.banks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tube{background:#080808;border:1px solid #2a2c30;height:200px;display:flex;align-items:center;justify-content:center;font-family:"Chakra Petch",sans-serif;font-size:72px;font-weight:700;color:#ff6a1a;text-shadow:0 0 18px rgba(255,106,26,.55);box-shadow:inset 0 0 40px rgba(255,106,26,.08)}
+.skills{border-top:1px solid #2a2c30;padding:20px 0 8px}
+.skills .lab{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#ff6a1a;margin-bottom:14px}
+.skills ul{display:flex;flex-wrap:wrap;gap:14px 36px;list-style:none}
+.skills li{font-size:15px;color:#e8eaee}
+.skills li span{display:inline-block;min-width:28px;color:#6a7078;font-size:11px;letter-spacing:.12em}
+.foot{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#6a7078;padding-top:12px;border-top:1px solid #2a2c30;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+<div class="panel">
+  <header class="cap">
+    <h1>Juan Nicolas Piedrahita Salas</h1>
+    <div class="role">Full-stack systems · chassis cap</div>
+  </header>
+  <section class="hero">
+    <div>
+      <div class="intro">Atlas Route Planner</div>
+      <p>Lead project as the live count. Skills sit as labeled banks under the chassis — words first, glow second.</p>
+    </div>
+    <div class="banks" aria-hidden="true">
+      <div class="tube">0</div><div class="tube">1</div><div class="tube">7</div>
+    </div>
+  </section>
+  <aside class="skills">
+    <div class="lab">Skill banks · labeled</div>
+    <ul>
+      <li><span>T1</span>TypeScript</li>
+      <li><span>T2</span>Next.js</li>
+      <li><span>T3</span>PostgreSQL</li>
+      <li><span>T4</span>System design</li>
+      <li><span>T5</span>API design</li>
+      <li><span>T6</span>React</li>
+    </ul>
+  </aside>
+  <footer class="foot"><span>Email · LinkedIn · GitHub</span><span>Nixie laboratory counter</span></footer>
+</div>
+</body>
+</html>

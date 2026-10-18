@@ -1,0 +1,164 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned Case Binder. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "Case Binder",
+      "kicker": "THE ROLL",
+      "lineage": "professional case-study binder / evidence tabs",
+      "thesis": "Projects open as evidence tabs; specialty is the spine; contact sits on the open sheet.",
+      "palette": ["#3d342c", "#f3ebe0", "#8b1e1e", "#1a1410"],
+      "materials": ["board binder", "tab stock", "manila sheet"],
+      "viewport": "Open binder on a desk: live Project 01 tab, large plate, contact links on the sheet edge.",
+      "risk": "Reads corporate HR kit if tabs get timid — keep spine red and proof oversized.",
+      "raised": [
+        {
+          "from": "challenger-tensegrity",
+          "raise": "Skills and projects read as a connected force network — linked members, not isolated chips."
+        },
+        {
+          "from": "challenger-webgl",
+          "raise": "One oversized specialty word on the sheet; nav as thin tracked labels at the margins."
+        },
+        {
+          "from": "challenger-drum",
+          "raise": "Projects stay an unbroken addressable sequence — tabs never wrap into a card grid."
+        },
+        {
+          "from": "challenger-zoo",
+          "raise": "One tab/lobe owns each viewport; the next section starts only after a full coast change."
+        }
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html",
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "kind": "pick",
+      "label": "Presentation Board",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "architecture / studio presentation boards",
+      "thesis": "A single presentation board: title block, one dominant project plate, contact in the footer strip.",
+      "palette": ["#e8e4dc", "#111111", "#2c333c", "#f2efe8"],
+      "materials": ["museum board", "graphite rules", "photographic plate"],
+      "viewport": "Full-bleed board with name as title block and one oversized project plate as proof.",
+      "risk": "Also the direction most specialty portfolios land on — familiar, effective.",
+      "html": ".impeccable/mocks/decision/model-pick.html",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-spy",
+      "kind": "challenger",
+      "catalogId": "pop-culture-shelf-spy-dossier-title-sequence",
+      "label": "Spy Dossier",
+      "verdict": "wins",
+      "lineage": "sixties spy-film dossier title sequence",
+      "thesis": "Hiring as case-file review: project frames under a reticle, name typed in, contact as the red stamp.",
+      "palette": ["#c4a574", "#1a1814", "#c41e1e", "#f0e6d0"],
+      "materials": ["manila dossier", "halftone frames", "classification stamp"],
+      "viewport": "Manila field with typed name, three project frames, reticle on the lead, CONTACT stamp.",
+      "case": "Beats the binder on hiring-manager identification and contact clarity — evaluation as file review.",
+      "risk": "Camp spy pastiche if the stamp and reticle play as jokes instead of evidence tools.",
+      "html": ".impeccable/mocks/decision/challenger-spy.html",
+      "comp": ".impeccable/mocks/decision/challenger-spy.webp",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-spy-dossier-title-sequence-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/pop-culture-shelf-spy-dossier-title-sequence.webp"
+    },
+    {
+      "id": "challenger-daylight",
+      "kind": "challenger",
+      "catalogId": "architecture-inhabitable-space-daylight-section",
+      "label": "Daylight Section",
+      "verdict": "competitive",
+      "lineage": "architectural daylight section drawings",
+      "thesis": "The portfolio as a building section: project rooms gather along the moving edge of useful light.",
+      "palette": ["#f4f1ea", "#1c1a16", "#e8c45a", "#5a6a88"],
+      "materials": ["limewash ground", "charcoal poche", "gold sunbeam"],
+      "viewport": "Long section cut: dark poche left, sunbeam across one occupied project room.",
+      "case": "Holds craft-evaluation identification; slower contact path than stamp or sheet links.",
+      "risk": "Architecture costume if solar poetry outranks project proof.",
+      "html": ".impeccable/mocks/decision/challenger-daylight.html",
+      "comp": ".impeccable/mocks/decision/challenger-daylight.webp",
+      "hero": "https://impeccable.style/worlds/cards/architecture-inhabitable-space-daylight-section-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/architecture-inhabitable-space-daylight-section.webp"
+    },
+    {
+      "id": "challenger-tensegrity",
+      "kind": "challenger",
+      "catalogId": "kinetic-sculpture-automata-tensegrity-breathing-column",
+      "label": "Tensegrity Column",
+      "verdict": "declined",
+      "lineage": "tensegrity kinetic sculpture",
+      "palette": ["#e8e4dc", "#1a1a1a", "#c41e1e", "#8a8a8a"],
+      "materials": ["carbon rods", "red tension cord", "concrete ground"],
+      "case": "Hiring managers do not identify with structural sculpture; contact path dissolves into force diagrams.",
+      "kept": "Connected tension network — donated as linked skills/projects.",
+      "hero": "https://impeccable.style/worlds/cards/kinetic-sculpture-automata-tensegrity-breathing-column-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/kinetic-sculpture-automata-tensegrity-breathing-column.webp"
+    },
+    {
+      "id": "challenger-webgl",
+      "kind": "challenger",
+      "catalogId": "webgl-shader-portal",
+      "label": "Shader Portal",
+      "verdict": "declined",
+      "lineage": "experiential studio WebGL portal",
+      "palette": ["#0a1628", "#3d7eff", "#e8f0ff", "#1a1a1a"],
+      "materials": ["fragment-shader ground", "film grain", "thin type"],
+      "case": "Shader spectacle buries specialty and contact; fails hiring clarity.",
+      "kept": "Oversized specialty word + thin margin labels — donated as sheet hierarchy.",
+      "hero": "https://impeccable.style/worlds/cards/webgl-shader-portal-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/webgl-shader-portal.webp"
+    },
+    {
+      "id": "challenger-drum",
+      "kind": "challenger",
+      "catalogId": "signals-instruments-drum-machine-step-row",
+      "label": "Step Row",
+      "verdict": "declined",
+      "lineage": "early-80s drum machine step row",
+      "palette": ["#2a2a2a", "#e23a2b", "#f5a623", "#ffffff"],
+      "materials": ["charcoal panel", "candy step keys", "chase light"],
+      "case": "Music-gear identification misses hiring managers; projects-as-beats muddies proof.",
+      "kept": "Unbroken addressable sequence — donated as non-wrapping project tabs.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-drum-machine-step-row-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-drum-machine-step-row.webp"
+    },
+    {
+      "id": "challenger-zoo",
+      "kind": "challenger",
+      "catalogId": "aww2-zoo-gardens-guide-map",
+      "label": "Guide Map",
+      "verdict": "declined",
+      "lineage": "zoo and gardens guide map",
+      "palette": ["#F5F1E4", "#8ED462", "#2C2E2A", "#FF705D"],
+      "materials": ["flat colour lobes", "cream water", "capsule chips"],
+      "case": "Leisure-map culture fights hiring seriousness; cream-and-green defaults the category soft look.",
+      "kept": "One lobe owns the viewport — donated as single-tab ownership.",
+      "hero": "https://impeccable.style/worlds/cards/aww2-zoo-gardens-guide-map-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/aww2-zoo-gardens-guide-map.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "The category standard",
+    "thesis": "Dark hero, role headline, skill pills, project cards — executed at full craft.",
+    "palette": ["#0b0f14", "#f8fafc", "#2563eb", "#1e293b"],
+    "materials": ["clean grid", "soft avatar plate", "pill chips"],
+    "viewport": "Centered name and specialty over a portrait and a Get in touch button; skills as pills.",
+    "risk": "Indistinguishable from competing engineer portfolios by design.",
+    "html": ".impeccable/mocks/decision/canon.html",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

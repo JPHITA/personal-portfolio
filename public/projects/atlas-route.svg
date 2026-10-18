@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Synthetic Atlas Route Planner schematic">
+  <rect width="960" height="540" fill="#0c0c0e"/>
+  <rect x="24" y="24" width="912" height="492" fill="#14161a" stroke="#2a2c30" stroke-width="4"/>
+  <text x="48" y="72" fill="#ff6a1a" font-family="monospace" font-size="14" letter-spacing="3">SYNTHETIC · ATLAS ROUTE</text>
+  <rect x="48" y="100" width="520" height="360" fill="#080808" stroke="#2a2c30"/>
+  <path d="M80 380 L180 240 L320 300 L420 160 L520 220" fill="none" stroke="#ff6a1a" stroke-width="3" opacity="0.85"/>
+  <circle cx="180" cy="240" r="8" fill="#ff6a1a"/>
+  <circle cx="320" cy="300" r="8" fill="#ff6a1a"/>
+  <circle cx="420" cy="160" r="8" fill="#ff6a1a"/>
+  <g transform="translate(620,140)">
+    <rect width="90" height="160" fill="#080808" stroke="#2a2c30"/>
+    <text x="45" y="100" text-anchor="middle" fill="#ff6a1a" font-family="sans-serif" font-size="64" font-weight="700">0</text>
+  </g>
+  <g transform="translate(730,140)">
+    <rect width="90" height="160" fill="#080808" stroke="#2a2c30"/>
+    <text x="45" y="100" text-anchor="middle" fill="#ff6a1a" font-family="sans-serif" font-size="64" font-weight="700">1</text>
+  </g>
+  <g transform="translate(840,140)">
+    <rect width="90" height="160" fill="#080808" stroke="#2a2c30"/>
+    <text x="45" y="100" text-anchor="middle" fill="#ff6a1a" font-family="sans-serif" font-size="64" font-weight="700">7</text>
+  </g>
+  <text x="48" y="490" fill="#8a9098" font-family="monospace" font-size="13">Placeholder schematic · not production UI</text>
+</svg>

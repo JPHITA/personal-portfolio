@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Obsidian Spec Sheet — first viewport</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#121418;color:#e8eaee;font-family:"DM Sans",sans-serif}
+.sheet{height:100%;padding:32px 48px;display:grid;grid-template-rows:auto auto 1fr auto auto;gap:0;background:linear-gradient(160deg,#161a20 0%,#121418 50%,#0e1014 100%)}
+.top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid #2a2e36;padding-bottom:16px}
+.top .name{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.top .meta{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a909a}
+.plate-row{display:grid;grid-template-columns:1.4fr .6fr;gap:28px;padding:28px 0 20px;min-height:0}
+.plate{background:linear-gradient(135deg,#1e2836,#2a3548);border:1px solid #2a2e36;min-height:380px;position:relative}
+.plate .mark{position:absolute;top:12px;left:12px;width:14px;height:14px;border-left:1px solid #5b8def;border-top:1px solid #5b8def}
+.side{display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:8px}
+.side .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5b8def;margin-bottom:12px}
+.side h1{font-size:42px;font-weight:700;line-height:1.05;letter-spacing:-.03em;margin-bottom:14px}
+.side p{font-size:15px;line-height:1.45;color:#9aa0aa}
+.skills{border-top:1px solid #2a2e36;border-bottom:1px solid #2a2e36;padding:18px 0;display:grid;grid-template-columns:90px 1fr;gap:16px;align-items:start}
+.skills .lab{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5b8def;padding-top:4px}
+.skills ul{display:flex;flex-wrap:wrap;gap:12px 32px;list-style:none}
+.skills li{font-size:16px;font-weight:500}
+.skills li em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:11px;color:#6a7078;margin-right:10px;letter-spacing:.1em}
+.foot{display:flex;justify-content:space-between;padding-top:16px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6a7078}
+.foot a{color:#e8eaee;text-decoration:none;border-bottom:1px solid #5b8def;padding-bottom:2px;margin-right:20px}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="top">
+    <div class="name">Juan Nicolas Piedrahita Salas</div>
+    <div class="meta">Spec sheet · Rev A · Synthetic</div>
+  </header>
+  <section class="plate-row">
+    <div class="plate"><span class="mark"></span></div>
+    <aside class="side">
+      <div class="eyebrow">Product nameplate</div>
+      <h1>Atlas Route Planner</h1>
+      <p>Full-stack systems. Specialty and lead project on one dark sheet.</p>
+    </aside>
+  </section>
+  <aside class="skills">
+    <div class="lab">SPEC</div>
+    <ul>
+      <li><em>01</em>TypeScript</li>
+      <li><em>02</em>Next.js</li>
+      <li><em>03</em>PostgreSQL</li>
+      <li><em>04</em>System design</li>
+      <li><em>05</em>API design</li>
+      <li><em>06</em>React</li>
+    </ul>
+  </aside>
+  <footer class="foot">
+    <div><a href="#">Email</a><a href="#">LinkedIn</a><a href="#">GitHub</a></div>
+    <span>Contact · footer rule</span>
+  </footer>
+</div>
+</body>
+</html>
