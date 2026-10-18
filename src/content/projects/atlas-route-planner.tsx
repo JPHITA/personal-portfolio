@@ -11,6 +11,10 @@ export const meta: ProjectMeta = {
   summary:
     "Synthetic bank: pathfinding console that treats latency budgets like tube readings — words first, glow second.",
   tags: ["TypeScript", "Next.js", "System design"],
+  preview: {
+    src: "/projects/atlas-route.svg",
+    alt: "Synthetic schematic of Atlas Route Planner instrument face",
+  },
 };
 
 const figures = [

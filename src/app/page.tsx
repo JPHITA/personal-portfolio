@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ChassisPanel, ContactLinks } from "@/components/ChassisShell";
 import { projects, skills } from "@/content/projects";
@@ -6,7 +7,13 @@ import { projects, skills } from "@/content/projects";
 const heroLine =
   "Synthetic intro: full-stack systems work with labeled proof banks — glow as signal, contact when the reading fits.";
 
+/** ponytail: primary bank size; rest disclosed — bump when real specialty tiers exist */
+const PRIMARY_SKILL_COUNT = 4;
+
 export default function Home() {
+  const primarySkills = skills.slice(0, PRIMARY_SKILL_COUNT);
+  const moreSkills = skills.slice(PRIMARY_SKILL_COUNT);
+
   return (
     <ChassisPanel home>
       <section className="hero" aria-labelledby="hero-line">
@@ -23,7 +30,7 @@ export default function Home() {
           Skill banks · labeled
         </p>
         <ul className="skills-list">
-          {skills.map((skill, i) => (
+          {primarySkills.map((skill, i) => (
             <li key={skill}>
               <span className="idx" aria-hidden="true">
                 T{i + 1}
@@ -32,6 +39,23 @@ export default function Home() {
             </li>
           ))}
         </ul>
+        {moreSkills.length > 0 ? (
+          <details className="skills-more">
+            <summary>
+              More banks · {moreSkills.length}
+            </summary>
+            <ul className="skills-list">
+              {moreSkills.map((skill, i) => (
+                <li key={skill}>
+                  <span className="idx" aria-hidden="true">
+                    T{PRIMARY_SKILL_COUNT + i + 1}
+                  </span>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </details>
+        ) : null}
       </aside>
 
       <section className="projects" aria-labelledby="projects-lab">
@@ -42,7 +66,16 @@ export default function Home() {
           {projects.map((p) => (
             <li key={p.slug}>
               <Link href={`/projects/${p.slug}`} className="project-link">
-                <span className="lane">Bank</span>
+                <figure className="project-well">
+                  <Image
+                    src={p.preview.src}
+                    alt={p.preview.alt}
+                    width={960}
+                    height={540}
+                    sizes="(min-width: 768px) 40vw, 90vw"
+                  />
+                </figure>
+                <span className="lane">{p.tags.join(" · ")}</span>
                 <h2>{p.title}</h2>
                 <p>{p.summary}</p>
               </Link>

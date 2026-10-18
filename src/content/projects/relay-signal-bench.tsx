@@ -7,6 +7,10 @@ export const meta: ProjectMeta = {
   summary:
     "Synthetic second project: a bench for tracing event relays across services with steel-panel clarity.",
   tags: ["API design", "Observability", "PostgreSQL"],
+  preview: {
+    src: "/projects/relay-bench.svg",
+    alt: "Synthetic schematic of Relay Signal Bench panels",
+  },
 };
 
 const figures = [

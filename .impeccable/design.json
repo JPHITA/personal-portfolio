@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-18T03:23:50Z",
+  "generatedAt": "2026-10-18T14:12:00Z",
   "title": "Design System: Nixie Counter",
   "extensions": {
     "colorMeta": {
@@ -20,7 +20,7 @@
         "role": "neutral",
         "displayName": "Chassis Steel",
         "canonical": "#1a1c20",
-        "tonalRamp": ["#0c0c0e", "#121418", "#1a1c20", "#24272c", "#3a3e46", "#6a7078", "#a0a6ae", "#e8eaee"]
+        "tonalRamp": ["#0c0c0e", "#121418", "#1a1c20", "#24272c", "#3a3e46", "#747a82", "#a0a6ae", "#e8eaee"]
       },
       "chassis-edge": {
         "role": "neutral",
@@ -38,25 +38,25 @@
         "role": "neutral",
         "displayName": "Steel",
         "canonical": "#8a9098",
-        "tonalRamp": ["#2a2c30", "#3a3e46", "#5a6068", "#6a7078", "#8a9098", "#a8aeb6", "#c8ccd2", "#e8eaee"]
+        "tonalRamp": ["#2a2c30", "#3a3e46", "#5a6068", "#747a82", "#8a9098", "#a8aeb6", "#c8ccd2", "#e8eaee"]
       },
       "steel-dim": {
         "role": "neutral",
         "displayName": "Steel Dim",
-        "canonical": "#6a7078",
-        "tonalRamp": ["#1a1c20", "#2a2c30", "#3a3e46", "#4a5058", "#6a7078", "#8a9098", "#b0b6be", "#e8eaee"]
+        "canonical": "#747a82",
+        "tonalRamp": ["#1a1c20", "#2a2c30", "#3a3e46", "#4a5058", "#747a82", "#8a9098", "#b0b6be", "#e8eaee"]
       },
       "plate": {
         "role": "neutral",
         "displayName": "Plate",
         "canonical": "#f0f2f4",
-        "tonalRamp": ["#2a2c30", "#6a7078", "#a0a6ae", "#c8ccd2", "#e0e2e6", "#e8eaee", "#f0f2f4", "#fafbfc"]
+        "tonalRamp": ["#2a2c30", "#747a82", "#a0a6ae", "#c8ccd2", "#e0e2e6", "#e8eaee", "#f0f2f4", "#fafbfc"]
       },
       "plate-soft": {
         "role": "neutral",
         "displayName": "Plate Soft",
         "canonical": "#e8eaee",
-        "tonalRamp": ["#2a2c30", "#6a7078", "#9aa0a8", "#c0c4ca", "#d8dbe0", "#e0e3e8", "#e8eaee", "#f4f5f7"]
+        "tonalRamp": ["#2a2c30", "#747a82", "#9aa0a8", "#c0c4ca", "#d8dbe0", "#e0e3e8", "#e8eaee", "#f4f5f7"]
       },
       "tube-well": {
         "role": "neutral",
@@ -96,7 +96,7 @@
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Uppercase instrument labels: specialty, labs, hero/foot contact rails, lanes."
+        "purpose": "Uppercase instrument labels at 0.75rem for interactive rails; 0.6875rem for labs, indexes, figcaptions."
       }
     },
     "shadows": [
@@ -106,9 +106,9 @@
         "purpose": "Chassis face vignette and steel highlight."
       },
       {
-        "name": "detail-figure-well",
+        "name": "tube-figure-well",
         "value": "inset 0 0 40px rgba(255, 106, 26, 0.05)",
-        "purpose": "Light inset amber on project detail figures."
+        "purpose": "Light inset amber on home project wells and detail figures."
       },
       {
         "name": "foot-link-glow",
@@ -143,7 +143,7 @@
       "refersTo": "chassis-panel",
       "description": "Full-viewport instrument chassis: steel border, plate texture, inset gloom.",
       "html": "<div class=\"ds-chassis-panel\"><header class=\"ds-cap\"><p class=\"ds-cap-title\">Juan Nicolas Piedrahita Salas</p><p class=\"ds-cap-role\">Full-stack systems</p></header><p class=\"ds-slot\">Panel slot</p><footer class=\"ds-foot\"><span>Email</span><span class=\"ds-foot-mark\">Nixie laboratory counter</span></footer></div>",
-      "css": ".ds-chassis-panel { min-height: 320px; display: flex; flex-direction: column; padding: 1.5rem 1.25rem 1.25rem; background-color: var(--chassis, #0c0c0e); background-image: linear-gradient(180deg, rgba(20, 22, 26, 0.82) 0%, rgba(12, 12, 14, 0.92) 55%); border: 10px solid var(--chassis-steel, #1a1c20); box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(138, 144, 152, 0.08); color: var(--plate-soft, #e8eaee); font-family: var(--font-plex-mono, ui-monospace, monospace); } .ds-cap { display: flex; flex-direction: column; gap: 0.75rem; border-bottom: 1px solid var(--chassis-edge, #2a2c30); padding-bottom: 1rem; margin-bottom: 1rem; } .ds-cap-title { margin: 0; font-family: var(--font-chakra, system-ui, sans-serif); font-size: 1.5rem; font-weight: 700; letter-spacing: 0.02em; color: var(--plate, #f0f2f4); } .ds-cap-role { margin: 0; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--glow, #ff6a1a); } .ds-slot { flex: 1; margin: 0; font-size: 0.875rem; color: var(--steel, #8a9098); } .ds-foot { margin-top: auto; padding-top: 0.875rem; border-top: 1px solid var(--chassis-edge, #2a2c30); display: flex; justify-content: space-between; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel-dim, #6a7078); } .ds-foot-mark { color: var(--steel-dim, #6a7078); }"
+      "css": ".ds-chassis-panel { min-height: 320px; display: flex; flex-direction: column; padding: 1.5rem 1.25rem 1.25rem; background-color: var(--chassis, #0c0c0e); background-image: linear-gradient(180deg, rgba(20, 22, 26, 0.82) 0%, rgba(12, 12, 14, 0.92) 55%); border: 10px solid var(--chassis-steel, #1a1c20); box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(138, 144, 152, 0.08); color: var(--plate-soft, #e8eaee); font-family: var(--font-plex-mono, ui-monospace, monospace); } .ds-cap { display: flex; flex-direction: column; gap: 0.75rem; border-bottom: 1px solid var(--chassis-edge, #2a2c30); padding-bottom: 1rem; margin-bottom: 1rem; } .ds-cap-title { margin: 0; font-family: var(--font-chakra, system-ui, sans-serif); font-size: 1.5rem; font-weight: 700; letter-spacing: 0.02em; color: var(--plate, #f0f2f4); } .ds-cap-role { margin: 0; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--glow, #ff6a1a); } .ds-slot { flex: 1; margin: 0; font-size: 0.875rem; color: var(--steel, #8a9098); } .ds-foot { margin-top: auto; padding-top: 0.875rem; border-top: 1px solid var(--chassis-edge, #2a2c30); display: flex; justify-content: space-between; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel-dim, #747a82); } .ds-foot-mark { color: var(--steel-dim, #747a82); }"
     },
     {
       "name": "Lab Label",
@@ -157,17 +157,17 @@
       "name": "Hero CV",
       "kind": "custom",
       "refersTo": "hero-contacts",
-      "description": "CV one-liner + contact rail with icons; cluster mid, space-between from 900px.",
-      "html": "<div class=\"ds-hero-body\"><p class=\"ds-hero-copy\">Synthetic intro: full-stack systems work with labeled proof banks — glow as signal, contact when the reading fits.</p><nav class=\"ds-hero-contacts\" aria-label=\"Contact\"><a class=\"ds-foot-link\" href=\"#\"><svg class=\"ds-foot-link-icon\" viewBox=\"0 0 16 16\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M1.5 3.5A1.5 1.5 0 0 1 3 2h10a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 13 14H3a1.5 1.5 0 0 1-1.5-1.5v-9Zm1.3.4 5.2 3.6 5.2-3.6H2.8Zm10.7 1.4-5.05 3.5a1 1 0 0 1-1.1 0L2.3 5.3v7.2c0 .11.09.2.2.2h10.8c.11 0 .2-.09.2-.2V5.3Z\"/></svg>Email</a><span class=\"ds-foot-sep\"> · </span><a class=\"ds-foot-link\" href=\"#\">LinkedIn</a><span class=\"ds-foot-sep\"> · </span><a class=\"ds-foot-link\" href=\"#\">GitHub</a></nav></div>",
-      "css": ".ds-hero-body { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-family: var(--font-plex-mono, ui-monospace, monospace); } .ds-hero-copy { margin: 0; max-width: min(58ch, 100%); font-size: clamp(0.9375rem, 1.35vw, 1.0625rem); line-height: 1.5; color: var(--steel, #8a9098); } .ds-hero-contacts { display: flex; flex-wrap: wrap; align-items: center; flex-shrink: 0; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; } .ds-foot-link { color: var(--steel-dim, #6a7078); text-decoration: none; padding: 0.15rem 0; border-bottom: 1px solid transparent; transition: color 160ms ease-out, border-color 160ms ease-out, text-shadow 160ms ease-out; } .ds-foot-link:hover, .ds-foot-link:focus-visible { color: var(--glow, #ff6a1a); border-bottom-color: rgba(255, 106, 26, 0.55); text-shadow: 0 0 12px rgba(255, 106, 26, 0.35); outline: none; } .ds-foot-link-icon { display: inline-block; width: 0.75rem; height: 0.75rem; margin-right: 0.4rem; vertical-align: -0.05em; } .ds-foot-sep { color: var(--chassis-edge, #2a2c30); } @media (min-width: 640px) { .ds-hero-body { flex-direction: row; align-items: center; gap: 1.75rem; } .ds-hero-copy { flex: 1 1 auto; min-width: 0; } } @media (min-width: 900px) { .ds-hero-body { justify-content: space-between; } .ds-hero-copy { max-width: min(70ch, 55%); } }"
+      "description": "30vh flex-centered CV band: one-liner + contact rail with icons; cluster mid, space-between from 900px.",
+      "html": "<section class=\"ds-hero\"><div class=\"ds-hero-body\"><p class=\"ds-hero-copy\">Synthetic intro: full-stack systems work with labeled proof banks — glow as signal, contact when the reading fits.</p><nav class=\"ds-hero-contacts\" aria-label=\"Contact\"><a class=\"ds-foot-link\" href=\"#\"><svg class=\"ds-foot-link-icon\" viewBox=\"0 0 16 16\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M1.5 3.5A1.5 1.5 0 0 1 3 2h10a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 13 14H3a1.5 1.5 0 0 1-1.5-1.5v-9Zm1.3.4 5.2 3.6 5.2-3.6H2.8Zm10.7 1.4-5.05 3.5a1 1 0 0 1-1.1 0L2.3 5.3v7.2c0 .11.09.2.2.2h10.8c.11 0 .2-.09.2-.2V5.3Z\"/></svg>Email</a><span class=\"ds-foot-sep\"> · </span><a class=\"ds-foot-link\" href=\"#\">LinkedIn</a><span class=\"ds-foot-sep\"> · </span><a class=\"ds-foot-link\" href=\"#\">GitHub</a></nav></div></section>",
+      "css": ".ds-hero { min-height: 30vh; display: flex; flex-direction: column; justify-content: center; padding: 1.75rem 0 1.25rem; font-family: var(--font-plex-mono, ui-monospace, monospace); } .ds-hero-body { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; } .ds-hero-copy { margin: 0; max-width: min(58ch, 100%); font-size: clamp(0.9375rem, 1.35vw, 1.0625rem); line-height: 1.5; color: var(--steel, #8a9098); } .ds-hero-contacts { display: flex; flex-wrap: wrap; align-items: center; flex-shrink: 0; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; } .ds-foot-link { color: var(--steel-dim, #747a82); text-decoration: none; padding: 0.35rem 0; border-bottom: 1px solid transparent; transition: color 160ms ease-out, border-color 160ms ease-out, text-shadow 160ms ease-out; } .ds-foot-link:hover, .ds-foot-link:focus-visible { color: var(--glow, #ff6a1a); border-bottom-color: rgba(255, 106, 26, 0.55); text-shadow: 0 0 12px rgba(255, 106, 26, 0.35); outline: none; } .ds-foot-link-icon { display: inline-block; width: 0.75rem; height: 0.75rem; margin-right: 0.4rem; vertical-align: -0.05em; } .ds-foot-sep { color: var(--chassis-edge, #2a2c30); } @media (min-width: 640px) { .ds-hero-body { flex-direction: row; align-items: center; gap: 1.75rem; } .ds-hero-copy { flex: 1 1 auto; min-width: 0; } } @media (min-width: 900px) { .ds-hero-body { justify-content: space-between; } .ds-hero-copy { max-width: min(70ch, 55%); } }"
     },
     {
       "name": "Project Link",
       "kind": "custom",
       "refersTo": "project-link",
-      "description": "Project bank row: lane meta, Chakra title, steel summary; glow top rule on hover.",
-      "html": "<a class=\"ds-project-link\" href=\"#\"><span class=\"ds-lane\">Bank</span><span class=\"ds-project-title\">Atlas Route Planner</span><span class=\"ds-project-summary\">Synthetic bank: pathfinding console that treats latency budgets like tube readings.</span></a>",
-      "css": ".ds-project-link { display: block; text-decoration: none; color: inherit; padding: 1rem 0 0.25rem; border-top: 1px solid var(--chassis-edge, #2a2c30); transition: border-color 180ms ease-out, color 180ms ease-out; font-family: var(--font-plex-mono, ui-monospace, monospace); } .ds-project-link:hover, .ds-project-link:focus-visible { border-top-color: var(--glow, #ff6a1a); outline: none; } .ds-lane { display: inline-block; margin-bottom: 0.35rem; font-size: 0.625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel-dim, #6a7078); } .ds-project-title { display: block; margin: 0 0 0.5rem; font-family: var(--font-chakra, system-ui, sans-serif); font-size: 1.25rem; font-weight: 700; color: var(--plate, #f0f2f4); } .ds-project-summary { display: block; margin: 0; font-size: 0.8125rem; line-height: 1.5; color: var(--steel, #8a9098); max-width: 48ch; }"
+      "description": "Project bank: tube-well preview, stack tags, Chakra title, steel summary; glow top rule on hover.",
+      "html": "<a class=\"ds-project-link\" href=\"#\"><figure class=\"ds-project-well\"><div class=\"ds-project-well-face\">PROOF</div></figure><span class=\"ds-lane\">TypeScript · Next.js · System design</span><span class=\"ds-project-title\">Atlas Route Planner</span><span class=\"ds-project-summary\">Synthetic bank: pathfinding console that treats latency budgets like tube readings.</span></a>",
+      "css": ".ds-project-link { display: block; text-decoration: none; color: inherit; padding: 1rem 0 0.25rem; border-top: 1px solid var(--chassis-edge, #2a2c30); transition: border-color 180ms ease-out, color 180ms ease-out; font-family: var(--font-plex-mono, ui-monospace, monospace); } .ds-project-link:hover, .ds-project-link:focus-visible { border-top-color: var(--glow, #ff6a1a); outline: none; } .ds-project-well { margin: 0 0 0.75rem; background: var(--tube-well, #080808); border: 1px solid var(--chassis-edge, #2a2c30); box-shadow: inset 0 0 40px rgba(255, 106, 26, 0.05); overflow: hidden; } .ds-project-well-face { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; font-size: 0.6875rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--glow, #ff6a1a); } .ds-lane { display: block; margin-bottom: 0.4rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--steel-dim, #747a82); line-height: 1.4; } .ds-project-title { display: block; margin: 0 0 0.5rem; font-family: var(--font-chakra, system-ui, sans-serif); font-size: 1.25rem; font-weight: 700; color: var(--plate, #f0f2f4); } .ds-project-summary { display: block; margin: 0; font-size: 0.8125rem; line-height: 1.5; color: var(--steel, #8a9098); max-width: 48ch; }"
     },
     {
       "name": "Foot Link",
@@ -175,15 +175,15 @@
       "refersTo": "link-glow",
       "description": "Uppercase contact rail link; glow underline and text-shadow on hover/focus.",
       "html": "<nav class=\"ds-foot-contacts\" aria-label=\"Contact\"><a class=\"ds-foot-link\" href=\"#\">Email</a><span class=\"ds-foot-sep\"> · </span><a class=\"ds-foot-link\" href=\"#\">LinkedIn</a><span class=\"ds-foot-sep\"> · </span><a class=\"ds-foot-link\" href=\"#\">GitHub</a></nav>",
-      "css": ".ds-foot-contacts { display: flex; flex-wrap: wrap; align-items: center; font-family: var(--font-plex-mono, ui-monospace, monospace); font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; } .ds-foot-link { color: var(--steel-dim, #6a7078); text-decoration: none; padding: 0.15rem 0; border-bottom: 1px solid transparent; transition: color 160ms ease-out, border-color 160ms ease-out, text-shadow 160ms ease-out; } .ds-foot-link:hover, .ds-foot-link:focus-visible { color: var(--glow, #ff6a1a); border-bottom-color: rgba(255, 106, 26, 0.55); text-shadow: 0 0 12px rgba(255, 106, 26, 0.35); outline: none; } .ds-foot-sep { color: var(--chassis-edge, #2a2c30); }"
+      "css": ".ds-foot-contacts { display: flex; flex-wrap: wrap; align-items: center; font-family: var(--font-plex-mono, ui-monospace, monospace); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; } .ds-foot-link { color: var(--steel-dim, #747a82); text-decoration: none; padding: 0.35rem 0; border-bottom: 1px solid transparent; transition: color 160ms ease-out, border-color 160ms ease-out, text-shadow 160ms ease-out; } .ds-foot-link:hover, .ds-foot-link:focus-visible { color: var(--glow, #ff6a1a); border-bottom-color: rgba(255, 106, 26, 0.55); text-shadow: 0 0 12px rgba(255, 106, 26, 0.35); outline: none; } .ds-foot-sep { color: var(--chassis-edge, #2a2c30); }"
     },
     {
       "name": "Skills Bank Item",
       "kind": "custom",
       "refersTo": "lab-label",
-      "description": "Labeled skill reading with tube-style T-index.",
-      "html": "<ul class=\"ds-skills-list\"><li><span class=\"ds-idx\">T1</span>TypeScript</li><li><span class=\"ds-idx\">T2</span>Next.js</li></ul>",
-      "css": ".ds-skills-list { display: flex; flex-wrap: wrap; gap: 0.875rem 2rem; list-style: none; margin: 0; padding: 0; font-family: var(--font-plex-mono, ui-monospace, monospace); } .ds-skills-list li { font-size: 0.9375rem; color: var(--plate-soft, #e8eaee); } .ds-idx { display: inline-block; min-width: 1.75rem; margin-right: 0.35rem; color: var(--steel-dim, #6a7078); font-size: 0.6875rem; letter-spacing: 0.12em; }"
+      "description": "Labeled skill reading with tube-style T-index; primary strip + More banks disclosure.",
+      "html": "<div><ul class=\"ds-skills-list\"><li><span class=\"ds-idx\">T1</span>TypeScript</li><li><span class=\"ds-idx\">T2</span>Next.js</li></ul><details class=\"ds-skills-more\"><summary>More banks · 4</summary></details></div>",
+      "css": ".ds-skills-list { display: flex; flex-wrap: wrap; gap: 0.875rem 2rem; list-style: none; margin: 0; padding: 0; font-family: var(--font-plex-mono, ui-monospace, monospace); } .ds-skills-list li { font-size: 0.9375rem; color: var(--plate-soft, #e8eaee); } .ds-idx { display: inline-block; min-width: 1.75rem; margin-right: 0.35rem; color: var(--steel-dim, #747a82); font-size: 0.6875rem; letter-spacing: 0.12em; } .ds-skills-more { margin-top: 0.875rem; } .ds-skills-more summary { cursor: pointer; width: fit-content; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--steel-dim, #747a82); list-style: none; } .ds-skills-more summary::before { content: \"+ \"; color: var(--glow, #ff6a1a); } .ds-skills-more[open] summary::before { content: \"− \"; } .ds-skills-more summary:hover, .ds-skills-more summary:focus-visible { color: var(--glow, #ff6a1a); outline: none; }"
     },
     {
       "name": "Detail Figure",
@@ -191,7 +191,7 @@
       "refersTo": "detail-figure",
       "description": "Inset tube-well proof figure with edge rule and uppercase figcaption.",
       "html": "<figure class=\"ds-detail-figure\"><div class=\"ds-detail-figure-face\">PROOF PLATE</div><figcaption class=\"ds-detail-caption\">On-page figure · synthetic schematic</figcaption></figure>",
-      "css": ".ds-detail-figure { margin: 0; background: var(--tube-well, #080808); border: 1px solid var(--chassis-edge, #2a2c30); box-shadow: inset 0 0 40px rgba(255, 106, 26, 0.05); overflow: hidden; font-family: var(--font-plex-mono, ui-monospace, monospace); } .ds-detail-figure-face { display: flex; align-items: center; justify-content: center; min-height: 120px; font-size: 0.6875rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--glow, #ff6a1a); } .ds-detail-caption { padding: 0.65rem 0.85rem; font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--steel-dim, #6a7078); border-top: 1px solid var(--chassis-edge, #2a2c30); }"
+      "css": ".ds-detail-figure { margin: 0; background: var(--tube-well, #080808); border: 1px solid var(--chassis-edge, #2a2c30); box-shadow: inset 0 0 40px rgba(255, 106, 26, 0.05); overflow: hidden; font-family: var(--font-plex-mono, ui-monospace, monospace); } .ds-detail-figure-face { display: flex; align-items: center; justify-content: center; min-height: 120px; font-size: 0.6875rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--glow, #ff6a1a); } .ds-detail-caption { padding: 0.65rem 0.85rem; font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--steel-dim, #747a82); border-top: 1px solid var(--chassis-edge, #2a2c30); }"
     },
     {
       "name": "Cap Title Link",
@@ -210,7 +210,8 @@
       "Chakra Petch for name / project titles; IBM Plex Mono for everything else",
       "Glow (#ff6a1a) reserved for specialty, lab labels, focus, and hover signal",
       "Hero is CV one-liner + Email / LinkedIn / GitHub (icons on hero rail); no lead project, no decorative tube bank",
-      "Tube wells (#080808) hold detail-page proof imagery with edge rule and light inset amber",
+      "Home project banks carry inset tube-well previews; detail pages reuse the same well treatment for proof figures",
+      "Skills show a primary bank strip with the rest behind a disclosure control",
       "Foot rail of uppercase contact links with glow underline on hover"
     ],
     "rules": [
@@ -243,9 +244,11 @@
     "dos": [
       "Do keep specialty as the glow label on the chassis cap.",
       "Do keep the first viewport as CV one-liner + contact (hero icons allowed); skills and projects as labeled banks below.",
-      "Do put proof imagery in inset tube wells with hard edges (detail figures).",
+      "Do put proof imagery in inset tube wells with hard edges (home project previews and detail figures).",
+      "Do keep home hero at content band (min-height: 30vh, flex-centered) — not a full-viewport stretch.",
       "Do use Chakra Petch only for name and project/detail titles; mono everywhere else.",
-      "Do honor prefers-reduced-motion by disabling contact-link transitions."
+      "Do honor prefers-reduced-motion by disabling contact-link transitions.",
+      "Do keep steel-dim ≥4.5:1 on chassis for secondary UI text."
     ],
     "donts": [
       "Don't flood large surfaces with nixie orange — glow is signal, not a theme wash.",

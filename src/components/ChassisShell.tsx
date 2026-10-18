@@ -13,6 +13,7 @@ function ContactIcon({ label }: { label: ContactLabel }) {
     "aria-hidden": true as const,
     focusable: false as const,
   };
+
   if (label === "Email") {
     return (
       <svg {...common}>
@@ -20,13 +21,20 @@ function ContactIcon({ label }: { label: ContactLabel }) {
       </svg>
     );
   }
+
   if (label === "LinkedIn") {
     return (
       <svg {...common}>
-        <path d="M2.5 2A1.5 1.5 0 0 0 1 3.5v9A1.5 1.5 0 0 0 2.5 14h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 11.5 2h-9ZM5.2 12.2V6.7H3.4v5.5h1.8Zm-.9-6.25a1.05 1.05 0 1 1 0-2.1 1.05 1.05 0 0 1 0 2.1ZM12.6 12.2v-3c0-1.6-.87-2.35-2.03-2.35-.93 0-1.35.52-1.58.88V6.7H7.2c.02.45 0 5.5 0 5.5h1.8V9.3c0-.15.01-.3.06-.41.12-.3.4-.62.87-.62.61 0 .86.47.86 1.15v2.78h1.81Z" />
+        {/* ponytail: evenodd so "in" punches holes (nonzero left solid square) */}
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.625 4.385v7.23H2.297v-7.23h2.328zm-1.164-1.323c-.737 0-1.332-.595-1.332-1.332 0-.737.595-1.332 1.332-1.332.737 0 1.332.595 1.332 1.332 0 .737-.595 1.332-1.332 1.332zm4.861 8.553V8.431c0-.781.148-1.539.995-1.539.833 0 .846.777.846 1.582v4.322h2.328V8.226c0-2.215-1.186-3.246-2.768-3.246-1.289 0-1.845.715-2.165 1.217v.038h-.016l.016-.038V5.531H6.268c.03.678 0 7.23 0 7.23h2.328z"
+        />
       </svg>
     );
   }
+  
   return (
     <svg {...common}>
       <path
@@ -108,7 +116,7 @@ export function ChassisPanel({
   home?: boolean;
 }) {
   return (
-    <div className="panel">
+    <div className={home ? "panel panel-home" : "panel"}>
       <ChassisCap home={home} />
       {children}
       <ChassisFoot />

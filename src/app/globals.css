@@ -7,7 +7,8 @@
   --chassis-edge: #2a2c30;
   --glow: #ff6a1a;
   --steel: #8a9098;
-  --steel-dim: #6a7078;
+  /* AA floor on chassis (~4.5:1); was #6a7078 @ 3.9:1 */
+  --steel-dim: #747a82;
   --plate: #f0f2f4;
   --plate-soft: #e8eaee;
   --tube-well: #080808;
@@ -162,13 +163,18 @@ body {
   color: var(--glow);
 }
 
-.hero {
-  padding: 1.75rem 0 0.75rem;
+.panel-home .hero {
+  /* ponytail: ~30vh band — hero presence without 100dvh dead space */
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.75rem 0 1.25rem;
 }
 
 @media (min-width: 900px) {
-  .hero {
-    padding: 2rem 0 0.75rem;
+  .panel-home .hero {
+    padding: 2rem 0 1.5rem;
   }
 }
 
@@ -229,7 +235,8 @@ body {
   align-items: center;
   flex-shrink: 0;
   gap: 0.15rem 0;
-  font-size: 0.6875rem;
+  /* label ceiling — interactive rail, not decorative 11px */
+  font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -274,6 +281,43 @@ body {
 .skills-list li {
   font-size: 0.9375rem;
   color: var(--plate-soft);
+}
+
+.skills-more {
+  margin-top: 0.875rem;
+}
+
+.skills-more summary {
+  cursor: pointer;
+  width: fit-content;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--steel-dim);
+  list-style: none;
+}
+
+.skills-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.skills-more summary::before {
+  content: "+ ";
+  color: var(--glow);
+}
+
+.skills-more[open] summary::before {
+  content: "− ";
+}
+
+.skills-more summary:hover,
+.skills-more summary:focus-visible {
+  color: var(--glow);
+  outline: none;
+}
+
+.skills-more .skills-list {
+  margin-top: 0.875rem;
 }
 
 .idx {
@@ -329,6 +373,22 @@ body {
   outline: none;
 }
 
+.project-well {
+  margin: 0 0 0.75rem;
+  background: var(--tube-well);
+  border: 1px solid var(--chassis-edge);
+  box-shadow: inset 0 0 40px rgba(255, 106, 26, 0.05);
+  overflow: hidden;
+}
+
+.project-well img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .project-link h2 {
   margin: 0 0 0.5rem;
   font-family: var(--font-chakra), system-ui, sans-serif;
@@ -346,12 +406,14 @@ body {
 }
 
 .project-link .lane {
-  display: inline-block;
-  margin-bottom: 0.35rem;
-  font-size: 0.625rem;
-  letter-spacing: 0.14em;
+  display: block;
+  margin-bottom: 0.4rem;
+  /* readable stack meta — was 0.625rem / 10px (undersized functional text) */
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--steel-dim);
+  line-height: 1.4;
 }
 
 .foot {
@@ -361,7 +423,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--steel-dim);
@@ -384,7 +446,8 @@ body {
 .foot-link {
   color: var(--steel-dim);
   text-decoration: none;
-  padding: 0.15rem 0;
+  /* denser instrument rail; padding lifts hit area without CTA chrome */
+  padding: 0.35rem 0;
   border-bottom: 1px solid transparent;
   transition:
     color 160ms ease-out,
@@ -486,11 +549,12 @@ body {
 .detail-back {
   display: inline-block;
   margin-bottom: 1rem;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--steel-dim);
   text-decoration: none;
+  padding: 0.35rem 0;
   border-bottom: 1px solid transparent;
   transition: color 160ms ease-out, border-color 160ms ease-out;
 }
@@ -504,7 +568,8 @@ body {
 
 .synth-note {
   margin: 0.75rem 0 0;
-  font-size: 0.6875rem;
-  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  letter-spacing: normal;
+  line-height: 1.4;
   color: var(--steel-dim);
 }
