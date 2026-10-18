@@ -283,44 +283,64 @@ body {
 }
 
 .skills-list li {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   font-size: 0.9375rem;
   color: var(--plate-soft);
 }
 
-.skills-more {
-  margin-top: 0.5rem;
+.certs {
+  margin-top: 0.15rem;
 }
 
-.skills-more summary {
-  cursor: pointer;
-  width: fit-content;
+.cert-list {
+  list-style: none;
+  margin: 0 0 0.95rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cert-list li {
+  max-width: 52ch;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--steel);
+}
+
+.cert-list .cert-lead {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--glow);
+}
+
+.skill-groups {
+  display: grid;
+  gap: 0.9rem 1.75rem;
+}
+
+.skill-group {
+  min-width: 0;
+}
+
+.skill-group-label {
+  margin: 0 0 0.35rem;
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--steel-dim);
-  list-style: none;
 }
 
-.skills-more summary::-webkit-details-marker {
-  display: none;
+.skill-group .skills-list {
+  gap: 0.35rem 1.25rem;
 }
 
-.skills-more summary::before {
-  content: "+ ";
-  color: var(--glow);
-}
-
-.skills-more[open] summary::before {
-  content: "− ";
-}
-
-.skills-more summary:hover,
-.skills-more summary:focus-visible {
-  color: var(--glow);
-}
-
-.skills-more .skills-list {
-  margin-top: 0.5rem;
+@media (min-width: 640px) {
+  .skill-groups {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .idx {
@@ -396,6 +416,8 @@ body {
   font-family: var(--font-chakra), system-ui, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: break-word;
   color: var(--plate);
 }
 

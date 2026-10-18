@@ -6,7 +6,7 @@ Visitor mode: Experience. Routes: `/` (instrument face) and `/projects/[slug]` (
 
 ## Audience and job
 
-Hiring managers/engineers scan specialty → proof → skills → contact. Success: specialty readable without decoding glow; Email / LinkedIn / GitHub one glance away; two synthetic project stories evaluable on-page.
+Hiring managers/engineers scan specialty → proof → skills → contact. Success: specialty readable without decoding glow; Email / LinkedIn / GitHub one glance away; CV project stories evaluable on-page.
 
 ## Chosen direction
 
@@ -28,4 +28,4 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Constraints
 
-Synthetic content only. Skills under hero. Contact links only. Dark only. Easy-to-extend projects data file.
+CV content only — do not invent employers, client names, or metrics. Skills under hero. Contact links only. Dark only. Easy-to-extend projects data file.

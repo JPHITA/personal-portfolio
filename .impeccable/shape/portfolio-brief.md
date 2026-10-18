@@ -1,5 +1,7 @@
 # Portfolio shape brief — Nixie Counter
 
+Content update (2026-10-18): the two synthetic projects in this brief were replaced with CV-backed work. Do not invent employers, client or project proper names, or metrics. The visual direction below is unchanged.
+
 ## 1. Job and audience
 
 - **Who:** Hiring managers and engineers scanning a personal portfolio for a full-stack / systems candidate.

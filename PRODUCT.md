@@ -24,15 +24,15 @@ Specialty-led portfolio: the first viewport carries a short personal intro and c
 
 ## Operating Context
 
-Visited on desktop and mobile web. Hiring managers scan name + specialty + one-liner → contact → skills → projects. Early builds use placeholder content; real bio, projects, and links replace fakes later without changing structure.
+Visited on desktop and mobile web. Hiring managers scan name + specialty + short intro → contact → skills → projects. Intro, skills, certifications, projects, and contact links are CV content. Do not invent employers, client or project proper names, testimonials, or metrics.
 
 ## Capabilities and Constraints
 
 - Sections: personal presentation, skills, projects, contact and social links (LinkedIn, GitHub, Gmail).
 - Projects must be easy to add; each project can include images and video.
 - Desktop and mobile web required.
-- Skeleton phase: fake/placeholder data only until real content is supplied. Do not invent real credentials, employers, metrics, or testimonials as fact.
-- Undecided until real data: exact specialty wording, real project list, real contact URLs/addresses, photos, and resume assets.
+- Specialty is Backend & Data Engineer. Contact links are the real email, LinkedIn, and GitHub profiles.
+- Project photography is still empty. Each figure is a marked placeholder plate at `public/projects/<slug>/`. Do not invent employers, client names, or metrics beyond the supplied CV numbers.
 
 ## Brand Commitments
 
@@ -40,12 +40,12 @@ Working identity: Juan Nicolas Piedrahita Salas (from project naming). No locked
 
 ## Evidence on Hand
 
-None yet. Skeleton uses fake data. Future work must not fabricate testimonials, employers, press, or metrics as real. Real assets (projects, media, social URLs) arrive when the owner supplies them.
+CV-sourced intro, grouped skills, three certifications, and eight projects. Contact: jphita18@gmail.com, linkedin.com/in/jphita, github.com/JPHITA. No project photography yet — replace the placeholder PNGs in place. Do not fabricate testimonials, employers, press, or metrics.
 
 ## Product Principles
 
 1. Contact is the goal — every section should make reaching out feel obvious and low-friction.
 2. Specialty and projects carry proof; claims without project evidence stay out.
 3. Adding a project (with optional image/video) stays a content change, not a layout rewrite.
-4. Placeholder content is temporary scaffolding; structure and real facts stay separable.
+4. Copy is real and stays sourced. Image slots are the remaining placeholders; structure and facts stay separable.
 5. Works equally on desktop and mobile web — hiring managers will open it on either.

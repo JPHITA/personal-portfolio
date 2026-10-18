@@ -1,25 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChassisPanel, ContactLinks } from "@/components/ChassisShell";
-import { projects, skills } from "@/content/projects";
-
-/** Synthetic CV one-liner — replace when real bio is supplied. */
-const heroLine =
-  "Synthetic intro: full-stack systems work with labeled proof banks — glow as signal, contact when the reading fits.";
-
-/** ponytail: primary bank size; rest disclosed — bump when real specialty tiers exist */
-const PRIMARY_SKILL_COUNT = 4;
+import {
+  certifications,
+  projects,
+  site,
+  skillGroups,
+} from "@/content/projects";
 
 export default function Home() {
-  const primarySkills = skills.slice(0, PRIMARY_SKILL_COUNT);
-  const moreSkills = skills.slice(PRIMARY_SKILL_COUNT);
-
   return (
     <ChassisPanel home>
       <section className="hero" aria-labelledby="hero-line">
         <div className="hero-body">
           <p id="hero-line" className="hero-copy">
-            {heroLine}
+            {site.intro}
           </p>
           <ContactLinks className="hero-contacts" withIcons />
         </div>
@@ -29,23 +24,34 @@ export default function Home() {
         <p id="skills-lab" className="skills-lab">
           Skill banks · labeled
         </p>
-        <ul className="skills-list">
-          {primarySkills.map((skill) => (
-            <li key={skill}>{skill}</li>
+        <div className="certs">
+          <p id="certs-lab" className="skill-group-label">
+            Certifications
+          </p>
+          <ul className="cert-list" aria-labelledby="certs-lab">
+            <li className="cert-lead">{certifications.lead}</li>
+            {certifications.also.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="skill-groups">
+          {skillGroups.map((group) => (
+            <div key={group.id} className="skill-group">
+              <p id={`skill-${group.id}`} className="skill-group-label">
+                {group.label}
+              </p>
+              <ul
+                className="skills-list"
+                aria-labelledby={`skill-${group.id}`}
+              >
+                {group.items.map((skill) => (
+                  <li key={skill}>{skill}</li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
-        {moreSkills.length > 0 ? (
-          <details className="skills-more">
-            <summary>
-              More banks · {moreSkills.length}
-            </summary>
-            <ul className="skills-list">
-              {moreSkills.map((skill) => (
-                <li key={skill}>{skill}</li>
-              ))}
-            </ul>
-          </details>
-        ) : null}
+        </div>
       </aside>
 
       <section className="projects" aria-labelledby="projects-lab">
@@ -56,7 +62,7 @@ export default function Home() {
           {projects.map((p) => (
             <li key={p.slug}>
               <Link href={`/projects/${p.slug}`} className="project-link">
-                <span className="lane">{p.tags.join(" · ")}</span>
+                <span className="lane">{p.lane}</span>
                 <h2>{p.title}</h2>
                 <figure className="project-well">
                   <Image
@@ -72,7 +78,6 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <p className="synth-note">All project content is synthetic scaffolding.</p>
       </section>
     </ChassisPanel>
   );

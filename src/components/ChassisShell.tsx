@@ -73,7 +73,9 @@ export function ContactLinks({
           >
             {withIcons ? <ContactIcon label={c.label} /> : null}
             {c.label}
-            <span className="sr-only"> ({c.note})</span>
+            {c.href.startsWith("http") ? (
+              <span className="sr-only"> (opens in a new tab)</span>
+            ) : null}
           </a>
         </span>
       ))}

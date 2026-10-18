@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { ChassisPanel } from "@/components/ChassisShell";
-import { getProject, projects } from "@/content/projects";
+import { getProject, projects, site } from "@/content/projects";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -17,9 +17,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return { title: "Project" };
+  const title = `${project.title} · ${site.name}`;
   return {
-    title: `${project.title} · Juan Nicolas Piedrahita Salas`,
+    title: project.title,
     description: project.summary,
+    openGraph: {
+      title,
+      description: project.summary,
+      siteName: site.name,
+      type: "website",
+      locale: "en_US",
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description: project.summary,
+    },
   };
 }
 
@@ -46,7 +59,10 @@ async function ProjectDetail({ params }: Props) {
       <h1 className="detail-title">{project.title}</h1>
       <Body />
       <div className="detail-meta">
-        <ul className="detail-tags">
+        <p id="skills-used" className="skills-lab">
+          Skills used
+        </p>
+        <ul className="detail-tags" aria-labelledby="skills-used">
           {project.tags.map((tag, i) => (
             <li key={tag}>
               <span className="idx" aria-hidden="true">
@@ -56,9 +72,6 @@ async function ProjectDetail({ params }: Props) {
             </li>
           ))}
         </ul>
-        <p className="synth-note">
-          Synthetic project — not a real employer or metric claim.
-        </p>
       </div>
     </article>
   );

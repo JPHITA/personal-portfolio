@@ -14,7 +14,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Project overview
 
-Personal portfolio for **Juan Nicolas Piedrahita Salas** — a specialty-led hiring site (full-stack systems). Visual world: **Nixie Counter** chassis (blackened steel, amber glow, labeled banks). Stack: **Next.js 16** (App Router), **React 19**, **TypeScript**, **Tailwind CSS 4**.
+Personal portfolio for **Juan Nicolas Piedrahita Salas** — a specialty-led hiring site (backend and data engineer). Visual world: **Nixie Counter** chassis (blackened steel, amber glow, labeled banks). Stack: **Next.js 16** (App Router), **React 19**, **TypeScript**, **Tailwind CSS 4**.
 
 Primary paths:
 
@@ -85,7 +85,7 @@ Visual checks: use Impeccable verify / review flows and browser screenshots as n
 - Keep styling consistent with `DESIGN.md` and `src/app/globals.css` (CSS variables, Chakra Petch + IBM Plex Mono from `src/app/layout.tsx`).
 - Content is data + React bodies, not ad-hoc routes per project: one content module per project, registered in the index.
 - Match local TypeScript style: named exports for `meta` / `ProjectBody`, `@/` imports, `ProjectMeta` from `./types`.
-- Do not invent real testimonials, employers, metrics, or live contact URLs as fact while scaffolding remains synthetic.
+- Do not invent testimonials, employers, client or project proper names, or metrics. Contact URLs, skills, and project numbers are real CV content. Image files under `public/projects/<slug>/` are marked placeholders until replaced.
 
 ## Adding a project
 
@@ -95,8 +95,8 @@ Projects are **one `.tsx` content file + registry entry**. Detail routing is alr
 
 1. **Copy a template** from an existing project, e.g.:
 
-   - `src/content/projects/atlas-route-planner.tsx`
-   - `src/content/projects/relay-signal-bench.tsx`
+ - `src/content/projects/airflow-etl-aws.tsx`
+ - `src/content/projects/speed-detection-api.tsx`
 
    Save as `src/content/projects/<slug>.tsx` (filename usually matches `meta.slug`).
 
@@ -110,7 +110,7 @@ Projects are **one `.tsx` content file + registry entry**. Detail routing is alr
    | `tags` | Skill-like indexes on the detail page |
    | `preview` | `{ src, alt }` — home tube-well image (typically same first figure asset) |
 
-3. **Export `ProjectBody`** — detail body only (header/tags/back link come from the page). Follow the existing deck shape: `detail-deck` → `detail-copy` (Problem / Approach / Outcome) + `detail-media` (`next/image` figures with captions). Mark synthetic scenarios honestly when content is placeholder.
+3. **Export `ProjectBody`** — detail body only (header/tags/back link come from the page). Follow the existing deck shape: `detail-deck` → `detail-copy` (Problem / Approach / Outcome) + `detail-media` (`next/image` figures with captions). Use `figureSlot()` so each figure names a drop-in file under `public/projects/<slug>/`. State status honestly (in development, prototype, paused) when that is the fact.
 
 4. **Add static assets** under `public/projects/` (e.g. SVG schematic). Point `preview.src` and figure `src` at paths like `/projects/your-asset.svg`. Optional sidecar `*.svg.json` for prompt / provenance notes is fine if matching existing files.
 
