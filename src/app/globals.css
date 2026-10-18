@@ -214,6 +214,7 @@ body {
   font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
   line-height: 1.5;
   color: var(--steel);
+  text-align: justify;
 }
 
 @media (min-width: 640px) {
@@ -347,15 +348,6 @@ body {
   .skill-groups {
     grid-template-columns: 1fr 1fr;
   }
-}
-
-.idx {
-  display: inline-block;
-  min-width: 1.75rem;
-  margin-right: 0.35rem;
-  color: var(--steel-dim);
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
 }
 
 .projects {
@@ -497,10 +489,6 @@ body {
   color: var(--chassis-edge);
 }
 
-.foot-mark {
-  color: var(--steel-dim);
-}
-
 /* Project detail — full chassis rail; Body owns copy + figure banks */
 .detail {
   flex: 1 1 auto;
@@ -513,12 +501,12 @@ body {
 
 .detail-title {
   margin: 0;
+  width: 100%;
   font-family: var(--font-chakra), system-ui, sans-serif;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.1;
   color: var(--plate);
-  max-width: min(28ch, 100%);
 }
 
 /* title + deck = one story unit; meta keeps fuller separation below */

@@ -105,7 +105,6 @@ export function ChassisFoot() {
   return (
     <footer className="foot">
       <ContactLinks />
-      <span className="foot-mark">Nixie laboratory counter</span>
     </footer>
   );
 }

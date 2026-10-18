@@ -22,7 +22,7 @@ export default function Home() {
 
       <aside className="skills" aria-labelledby="skills-lab">
         <p id="skills-lab" className="skills-lab">
-          Skill banks · labeled
+          Professional skills
         </p>
         <div className="certs">
           <p id="certs-lab" className="skill-group-label">
@@ -56,7 +56,7 @@ export default function Home() {
 
       <section className="projects" aria-labelledby="projects-lab">
         <p id="projects-lab" className="projects-lab">
-          Project banks
+          Selected projects
         </p>
         <ul className="project-list">
           {projects.map((p) => (

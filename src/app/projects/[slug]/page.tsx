@@ -54,7 +54,7 @@ async function ProjectDetail({ params }: Props) {
   return (
     <article className="detail">
       <Link href="/" className="detail-back">
-        ← Chassis face
+        ← Back to home
       </Link>
       <h1 className="detail-title">{project.title}</h1>
       <Body />
@@ -63,13 +63,8 @@ async function ProjectDetail({ params }: Props) {
           Skills used
         </p>
         <ul className="detail-tags" aria-labelledby="skills-used">
-          {project.tags.map((tag, i) => (
-            <li key={tag}>
-              <span className="idx" aria-hidden="true">
-                T{i + 1}{" "}
-              </span>
-              {tag}
-            </li>
+          {project.tags.map((tag) => (
+            <li key={tag}>{tag}</li>
           ))}
         </ul>
       </div>

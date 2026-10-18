@@ -38,7 +38,7 @@ export const skillGroups = [
   {
     id: "languages",
     label: "Languages",
-    items: ["Python", "SQL", "Go", "Linux/shell"],
+    items: ["Python", "SQL", "Go", "TypeScript/JavaScript", "Linux/shell"],
   },
   {
     id: "backend",
@@ -95,13 +95,7 @@ export const skillGroups = [
   {
     id: "automation",
     label: "Automation & RPA",
-    items: [
-      "Playwright",
-      "SAP GUI scripting",
-      "Excel VBA",
-      "Office Scripts",
-      "Tkinter desktop tools",
-    ],
+    items: ["Playwright", "Excel VBA", "Office Scripts"],
   },
 ] as const;
 
@@ -134,7 +128,7 @@ export const site = {
   description:
     "Backend and data engineer in Medellín, Colombia (UTC-5). Google Cloud Certified Professional Data Engineer building production Python systems, data pipelines, and process automation across AWS and GCP.",
   intro:
-    "Google Cloud Certified Professional Data Engineer. Semi-Senior backend and data engineer in Medellín, Colombia (UTC-5), building production Python systems, data pipelines, and process automation (RPA) across AWS and GCP. Production work includes a 22-DAG Apache Airflow platform on AWS and load-tested FastAPI services for PyTorch, YOLO, and OCR models.",
+    "Google Cloud Certified Professional Data Engineer. Semi-Senior backend and data engineer in Medellín, Colombia (UTC-5), building production Python systems, data pipelines, and process automation (RPA) across AWS and GCP. Production work includes Apache Airflow platforms on AWS and FastAPI backends that handle frontend-originated user data for PyTorch, YOLO, and OCR models.",
 } as const;
 
 export const projects: Project[] = [
