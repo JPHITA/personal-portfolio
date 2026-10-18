@@ -1,0 +1,623 @@
+@import "tailwindcss";
+
+:root {
+  --chassis: #0c0c0e;
+  --chassis-face: #14161a;
+  --chassis-steel: #1a1c20;
+  --chassis-edge: #2a2c30;
+  --glow: #ff6a1a;
+  --steel: #8a9098;
+  /* AA floor on chassis (~4.5:1); was #6a7078 @ 3.9:1 */
+  --steel-dim: #747a82;
+  --plate: #f0f2f4;
+  --plate-soft: #e8eaee;
+  --tube-well: #080808;
+  --background: var(--chassis);
+  --foreground: var(--plate-soft);
+  --selection: rgba(255, 106, 26, 0.28);
+  --focus-ring: #ff6a1a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-glow: var(--glow);
+  --color-steel: var(--steel);
+  --color-plate: var(--plate);
+  --font-display: var(--font-chakra);
+  --font-mono: var(--font-plex-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--chassis);
+  color: var(--plate-soft);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Instrument scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--chassis-edge) var(--chassis);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--chassis);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--chassis-edge);
+  border: 2px solid var(--chassis);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--steel-dim);
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--plate);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Chassis instrument panel */
+.panel {
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.25rem 1.25rem;
+  background-color: var(--chassis);
+  background-image:
+    linear-gradient(180deg, rgba(20, 22, 26, 0.82) 0%, rgba(12, 12, 14, 0.92) 55%),
+    url("/plates/chassis-steel-plate.png");
+  background-size: cover, cover;
+  background-position: center, center;
+  border: 10px solid var(--chassis-steel);
+  box-shadow:
+    inset 0 0 80px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(138, 144, 152, 0.08);
+}
+
+@media (min-width: 768px) {
+  .panel {
+    padding: 2.25rem 3rem 1.5rem;
+    border-width: 12px;
+  }
+}
+
+.cap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--chassis-edge);
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cap {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.cap-title {
+  margin: 0;
+  font-family: var(--font-chakra), system-ui, sans-serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--plate);
+  line-height: 1.15;
+}
+
+.cap-title-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 160ms ease-out;
+}
+
+.cap-title-link:hover,
+.cap-title-link:focus-visible {
+  color: var(--glow);
+}
+
+.cap-role {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--glow);
+}
+
+.panel-home .hero {
+  /* ponytail: ~30vh band — hero presence without 100dvh dead space */
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.75rem 0 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .panel-home .hero {
+    padding: 2rem 0 1.5rem;
+  }
+}
+
+.hero-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .hero-body {
+    flex-direction: row;
+    align-items: center;
+    /* ponytail: omit justify so Turbopack media-merge can't let flex-start override 900 space-between */
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-body {
+    justify-content: space-between;
+    gap: clamp(1.75rem, 3vw, 2.75rem);
+  }
+}
+
+.hero-copy {
+  margin: 0;
+  max-width: min(58ch, 100%);
+  font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
+  line-height: 1.5;
+  color: var(--steel);
+}
+
+@media (min-width: 640px) {
+  .hero-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-copy {
+    max-width: min(70ch, 55%);
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-copy {
+    /* grow measure so space-between gap stays modest on ultra-wide */
+    max-width: min(90ch, 75%);
+  }
+}
+
+.hero-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.15rem 0;
+  /* label ceiling — interactive rail, not decorative 11px */
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.foot-link-icon {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.05em;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .foot-link,
+  .detail-back,
+  .cap-title-link {
+    transition: none;
+  }
+}
+
+.skills {
+  border-top: 1px solid var(--chassis-edge);
+  /* ponytail: tighter bank so project titles clear the fold */
+  padding: 0.875rem 0 0.35rem;
+}
+
+.skills-lab {
+  margin: 0 0 0.5rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--glow);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skills-list li {
+  font-size: 0.9375rem;
+  color: var(--plate-soft);
+}
+
+.skills-more {
+  margin-top: 0.5rem;
+}
+
+.skills-more summary {
+  cursor: pointer;
+  width: fit-content;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--steel-dim);
+  list-style: none;
+}
+
+.skills-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.skills-more summary::before {
+  content: "+ ";
+  color: var(--glow);
+}
+
+.skills-more[open] summary::before {
+  content: "− ";
+}
+
+.skills-more summary:hover,
+.skills-more summary:focus-visible {
+  color: var(--glow);
+}
+
+.skills-more .skills-list {
+  margin-top: 0.5rem;
+}
+
+.idx {
+  display: inline-block;
+  min-width: 1.75rem;
+  margin-right: 0.35rem;
+  color: var(--steel-dim);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+}
+
+.projects {
+  border-top: 1px solid var(--chassis-edge);
+  padding: 1rem 0 1rem;
+  margin-top: 0.25rem;
+}
+
+.projects-lab {
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--glow);
+}
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .project-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+.project-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.75rem 0 0.25rem;
+  border-top: 1px solid var(--chassis-edge);
+  transition: border-color 180ms ease-out, color 180ms ease-out;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  border-top-color: var(--glow);
+}
+
+.project-well {
+  margin: 0.5rem 0 0.65rem;
+  background: var(--tube-well);
+  border: 1px solid var(--chassis-edge);
+  box-shadow: inset 0 0 40px rgba(255, 106, 26, 0.05);
+  overflow: hidden;
+}
+
+.project-well img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.project-link h2 {
+  margin: 0;
+  font-family: var(--font-chakra), system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--plate);
+}
+
+.project-link p {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--steel);
+  max-width: 48ch;
+}
+
+.project-link .lane {
+  display: block;
+  margin-bottom: 0.25rem;
+  /* readable stack meta — was 0.625rem / 10px (undersized functional text) */
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--steel-dim);
+  line-height: 1.4;
+}
+
+.foot {
+  margin-top: auto;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--chassis-edge);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--steel-dim);
+}
+
+@media (min-width: 640px) {
+  .foot {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.foot-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.foot-link {
+  /* rest: weight + steel underline — affordance without glow flood */
+  color: var(--steel);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 0.15rem;
+  border-bottom: 1px solid rgba(138, 144, 152, 0.45);
+  transition:
+    color 160ms ease-out,
+    border-color 160ms ease-out,
+    text-shadow 160ms ease-out;
+}
+
+.foot-link:hover,
+.foot-link:focus-visible {
+  color: var(--glow);
+  border-bottom-color: rgba(255, 106, 26, 0.55);
+  text-shadow: 0 0 12px rgba(255, 106, 26, 0.35);
+}
+
+.foot-sep {
+  color: var(--chassis-edge);
+}
+
+.foot-mark {
+  color: var(--steel-dim);
+}
+
+/* Project detail — full chassis rail; Body owns copy + figure banks */
+.detail {
+  flex: 1 1 auto;
+  width: 100%;
+  padding: 1.75rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.detail-title {
+  margin: 0;
+  font-family: var(--font-chakra), system-ui, sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--plate);
+  max-width: min(28ch, 100%);
+}
+
+/* title + deck = one story unit; meta keeps fuller separation below */
+.detail-title + .detail-deck {
+  margin-top: -0.15rem;
+}
+
+/* ponytail: story measure left, proof wells fill remaining chassis from 900px */
+.detail-deck {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+  border-top: 1px solid var(--chassis-edge);
+  padding-top: 1.15rem;
+}
+
+@media (min-width: 900px) {
+  .detail-deck {
+    grid-template-columns: minmax(0, min(42ch, 40%)) minmax(0, 1fr);
+    gap: 2rem 3rem;
+  }
+}
+
+.detail-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.detail-section {
+  margin: 0;
+}
+
+.detail-section h2 {
+  margin: 0 0 0.4rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--glow);
+}
+
+.detail-section p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--steel);
+  max-width: 62ch;
+}
+
+.detail-media {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.detail-figure {
+  margin: 0;
+  background: var(--tube-well);
+  border: 1px solid var(--chassis-edge);
+  box-shadow: inset 0 0 40px rgba(255, 106, 26, 0.05);
+  overflow: hidden;
+}
+
+.detail-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.detail-figure figcaption {
+  padding: 0.65rem 0.85rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--steel-dim);
+  border-top: 1px solid var(--chassis-edge);
+}
+
+.detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid var(--chassis-edge);
+  padding-top: 1rem;
+}
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8125rem;
+  color: var(--plate-soft);
+}
+
+.detail-back {
+  display: inline-block;
+  align-self: flex-start;
+  width: fit-content;
+  margin-bottom: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--steel-dim);
+  text-decoration: none;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 160ms ease-out, border-color 160ms ease-out;
+}
+
+.detail-back:hover,
+.detail-back:focus-visible {
+  color: var(--glow);
+  border-bottom-color: rgba(255, 106, 26, 0.55);
+  outline: none;
+}
+
+.synth-note {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: normal;
+  line-height: 1.4;
+  color: var(--steel-dim);
+}

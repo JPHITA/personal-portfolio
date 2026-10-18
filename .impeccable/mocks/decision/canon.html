@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Category standard — first viewport</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#0b0f14;color:#f8fafc;font-family:"IBM Plex Sans",sans-serif}
+.wrap{height:100%;padding:40px 64px;display:grid;grid-template-rows:auto 1fr auto auto;background:radial-gradient(ellipse at 30% 20%,#152033 0%,#0b0f14 55%)}
+nav{display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-size:18px;font-weight:700}
+nav a{color:#94a3b8;text-decoration:none;font-size:14px;margin-left:28px}
+nav a.primary{color:#f8fafc;border-bottom:2px solid #2563eb;padding-bottom:2px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:40px 0 24px}
+.hero h1{font-size:56px;font-weight:700;letter-spacing:-.03em;line-height:1.05;margin-bottom:12px}
+.hero .role{font-size:16px;color:#94a3b8;margin-bottom:24px}
+.hero .cta{display:inline-block;background:#2563eb;color:#fff;padding:14px 22px;font-size:15px;font-weight:600;text-decoration:none;border-radius:4px}
+.portrait{height:380px;background:linear-gradient(160deg,#1e293b,#334155);border-radius:8px}
+.skills{border-top:1px solid #1e293b;padding:20px 0;display:grid;grid-template-columns:100px 1fr;gap:16px;align-items:center}
+.skills .lab{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#2563eb}
+.skills ul{display:flex;flex-wrap:wrap;gap:10px 12px;list-style:none}
+.skills li{font-size:14px;font-weight:600;padding:8px 14px;background:#1e293b;border:1px solid #334155;border-radius:4px}
+.foot{font-size:13px;color:#64748b;padding-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="logo">Juan Nicolas Piedrahita Salas</div>
+    <div><a href="#">Work</a><a href="#">Skills</a><a href="#" class="primary">Contact</a></div>
+  </nav>
+  <section class="hero">
+    <div>
+      <h1>Full-stack systems engineer</h1>
+      <p class="role">Projects and craft proof first. Contact when ready.</p>
+      <a class="cta" href="#">Get in touch</a>
+    </div>
+    <div class="portrait" aria-hidden="true"></div>
+  </section>
+  <aside class="skills">
+    <div class="lab">Skills</div>
+    <ul>
+      <li>TypeScript</li>
+      <li>Next.js</li>
+      <li>PostgreSQL</li>
+      <li>System design</li>
+      <li>API design</li>
+      <li>React</li>
+    </ul>
+  </aside>
+  <footer class="foot">Email · LinkedIn · GitHub — category standard, dark, skills under hero</footer>
+</div>
+</body>
+</html>

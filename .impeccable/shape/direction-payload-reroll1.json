@@ -1,0 +1,164 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned Radar Scope Deck. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "Radar Scope Deck",
+      "kicker": "THE ROLL",
+      "lineage": "naval / aviation night radar console",
+      "thesis": "Night-ops console: specialty glows on the scope; skills sit as a labeled legend strip under the CRT.",
+      "palette": ["#0a0e12", "#1a2330", "#3dffa8", "#c8d0d8"],
+      "materials": ["CRT glass", "matte console bezel", "phosphor green"],
+      "viewport": "Dark console: name + specialty over the scope face; skills as scannable text labels in a legend strip directly under the hero; contact on the bezel.",
+      "risk": "Reads military cosplay if phosphor outranks project proof and plain skill words.",
+      "raised": [
+        {
+          "from": "challenger-algorave",
+          "raise": "Lead project owns one highlighted active lane — a single focus ring on the scope, never a full syntax stage."
+        },
+        {
+          "from": "challenger-matchbook",
+          "raise": "Contact stays edge-ranked caps on the bezel — Email, LinkedIn, GitHub always visible."
+        },
+        {
+          "from": "challenger-jacquard",
+          "raise": "Skills read as sequential labeled rows under the motif — fixed legend order, not freeform glow."
+        },
+        {
+          "from": "challenger-understory",
+          "raise": "Brightest white reserved for the skills legend under the hero — dimmer phosphor for atmosphere only."
+        }
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html",
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "kind": "pick",
+      "label": "Obsidian Spec Sheet",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "industrial product datasheet on charcoal stock",
+      "thesis": "Dark industrial datasheet: specialty is the nameplate; skills are a labeled SPEC row under the hero plate.",
+      "palette": ["#121418", "#e8eaee", "#5b8def", "#2a2e36"],
+      "materials": ["charcoal stock", "hairline rules", "engraved nameplate"],
+      "viewport": "Full-bleed dark sheet: nameplate + one project plate as hero; SPEC skills row with plain labels under it; contact in the footer rule.",
+      "risk": "Also the direction most specialty portfolios land on — familiar, effective.",
+      "html": ".impeccable/mocks/decision/model-pick.html",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-nixie",
+      "kind": "challenger",
+      "catalogId": "signals-instruments-nixie-laboratory-counter",
+      "label": "Nixie Counter",
+      "verdict": "competitive",
+      "lineage": "nixie-tube laboratory counter",
+      "thesis": "Skills and proof as labeled tube banks on blackened steel; specialty engraved on the chassis cap.",
+      "palette": ["#0c0c0e", "#ff6a1a", "#8a9098", "#1a1c20"],
+      "materials": ["blackened steel", "glass envelopes", "neon orange glow"],
+      "viewport": "Steel panel hero with specialty cap; skills as labeled tube banks under the chassis title — readable words, not digits alone.",
+      "case": "Holds product clarity via fixed labeled banks; loses hiring-manager identification to ops-console evaluation.",
+      "risk": "Novelty gadget if orange glow outranks plain skill names.",
+      "html": ".impeccable/mocks/decision/challenger-nixie.html",
+      "comp": ".impeccable/mocks/decision/challenger-nixie.webp",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-nixie-laboratory-counter-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-nixie-laboratory-counter.webp"
+    },
+    {
+      "id": "challenger-annual",
+      "kind": "challenger",
+      "catalogId": "design-annual-s-plate-section",
+      "label": "Plate Section",
+      "verdict": "competitive",
+      "lineage": "design annual plate section",
+      "thesis": "Continuous sheet with registration marks; sticky mono skill tokens under the lead plate.",
+      "palette": ["#16181A", "#F5F4F6", "#DCDDF3", "#C9C7C4"],
+      "materials": ["uncoated stock", "hairline rules", "registration crosses"],
+      "viewport": "Lead project plate as hero; sticky mono skill tokens as a labeled bar under the plate; contact as filled mono rect.",
+      "case": "Holds clarity with sticky labeled skills; light stock fights the dark preference and slows night-ops identification.",
+      "risk": "Reads print-portfolio default when the sheet stays near-white.",
+      "html": ".impeccable/mocks/decision/challenger-annual.html",
+      "comp": ".impeccable/mocks/decision/challenger-annual.webp",
+      "hero": "https://impeccable.style/worlds/cards/design-annual-s-plate-section-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/design-annual-s-plate-section.webp"
+    },
+    {
+      "id": "challenger-algorave",
+      "kind": "challenger",
+      "catalogId": "medium-native-algorave-source-floor",
+      "label": "Algorave Floor",
+      "verdict": "declined",
+      "lineage": "algorave live-code floor",
+      "palette": ["#050505", "#39ff14", "#ff2bd6", "#f5a623"],
+      "materials": ["projector black", "phosphor syntax", "amber cue flash"],
+      "case": "Hiring managers do not identify with rave-floor code; specialty and skills drown in syntax theater.",
+      "kept": "Single highlighted active lane — donated as one focus ring for the lead project.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-algorave-source-floor-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/medium-native-algorave-source-floor.webp"
+    },
+    {
+      "id": "challenger-matchbook",
+      "kind": "challenger",
+      "catalogId": "vernacular-ephemera-matchbook-drawer",
+      "label": "Matchbook Drawer",
+      "verdict": "declined",
+      "lineage": "hotel and club matchbook drawer",
+      "palette": ["#1a0e0e", "#8b1a1a", "#1a3a28", "#d4af37"],
+      "materials": ["oxblood cover", "gold foil script", "striker gray"],
+      "case": "Club ephemera identification misses hiring seriousness; skills do not fit pocket covers as scannable labels.",
+      "kept": "Edge-ranked contact caps — donated as always-visible bezel links.",
+      "hero": "https://impeccable.style/worlds/cards/vernacular-ephemera-matchbook-drawer-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/vernacular-ephemera-matchbook-drawer.webp"
+    },
+    {
+      "id": "challenger-jacquard",
+      "kind": "challenger",
+      "catalogId": "textiles-weave-drape-fashion-jacquard-punched-brocade",
+      "label": "Jacquard Brocade",
+      "verdict": "declined",
+      "lineage": "jacquard punched brocade loom",
+      "palette": ["#0a1628", "#c9a227", "#f0e6d0", "#050810"],
+      "materials": ["midnight silk", "gold weft", "punch-card cream"],
+      "case": "Fashion-loom culture fails hiring identification; binary motif buries plain skill words.",
+      "kept": "Sequential labeled rows under the motif — donated as ordered skills legend.",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-jacquard-punched-brocade-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-jacquard-punched-brocade.webp"
+    },
+    {
+      "id": "challenger-understory",
+      "kind": "challenger",
+      "catalogId": "dream-surreal-impossible-worlds-luminescent-alien-understory",
+      "label": "Alien Understory",
+      "verdict": "declined",
+      "lineage": "luminescent alien forest understory",
+      "palette": ["#050708", "#5ef0d0", "#c49bff", "#8fff9a"],
+      "materials": ["near-black loam", "spore glow", "vein pulse"],
+      "case": "Surreal botany fails hiring identification; proximity glow hides scannable skill labels.",
+      "kept": "Brightest white for focus — donated as high-contrast skills legend under hero.",
+      "hero": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-luminescent-alien-understory-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-luminescent-alien-understory.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "The category standard",
+    "thesis": "Dark hero, role headline, skills strip under hero, project proof — executed at full craft.",
+    "palette": ["#0b0f14", "#f8fafc", "#2563eb", "#1e293b"],
+    "materials": ["clean grid", "soft avatar plate", "labeled skill chips"],
+    "viewport": "Dark hero with name and specialty; skills as scannable text labels in a strip under the hero; Get in touch CTA.",
+    "risk": "Indistinguishable from competing engineer portfolios by design.",
+    "html": ".impeccable/mocks/decision/canon.html",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

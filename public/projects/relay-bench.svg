@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Synthetic Relay Signal Bench schematic">
+  <rect width="960" height="540" fill="#0c0c0e"/>
+  <rect x="24" y="24" width="912" height="492" fill="#14161a" stroke="#2a2c30" stroke-width="4"/>
+  <text x="48" y="72" fill="#ff6a1a" font-family="monospace" font-size="14" letter-spacing="3">SYNTHETIC · RELAY BENCH</text>
+  <rect x="48" y="100" width="864" height="120" fill="#080808" stroke="#2a2c30"/>
+  <path d="M70 160 Q160 110 250 170 T430 150 T610 180 T790 140" fill="none" stroke="#ff6a1a" stroke-width="2.5"/>
+  <rect x="48" y="250" width="270" height="200" fill="#080808" stroke="#2a2c30"/>
+  <rect x="348" y="250" width="270" height="200" fill="#080808" stroke="#2a2c30"/>
+  <rect x="648" y="250" width="264" height="200" fill="#080808" stroke="#2a2c30"/>
+  <text x="70" y="290" fill="#e8eaee" font-family="monospace" font-size="14">BANK A</text>
+  <text x="370" y="290" fill="#e8eaee" font-family="monospace" font-size="14">BANK B</text>
+  <text x="670" y="290" fill="#e8eaee" font-family="monospace" font-size="14">BANK C</text>
+  <text x="70" y="340" fill="#8a9098" font-family="monospace" font-size="12">ingress · labeled</text>
+  <text x="370" y="340" fill="#8a9098" font-family="monospace" font-size="12">fan-out · labeled</text>
+  <text x="670" y="340" fill="#8a9098" font-family="monospace" font-size="12">sink · labeled</text>
+  <text x="48" y="490" fill="#8a9098" font-family="monospace" font-size="13">Placeholder schematic · not production UI</text>
+</svg>
