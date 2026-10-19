@@ -23,7 +23,7 @@ export const meta = {
   title: "Research-grant ML platform",
   summary:
     "Freelance productivity-measurement model for a public-entity research contest, kept on the Firebase free tier. Paused, with no real users yet.",
-  lane: "Paused · Firebase",
+  lane: "Firebase",
   tags: ["Firebase", "GCP", "React", "Python ML"],
   figures,
   preview: { src: figures[0].src, alt: figures[0].alt },

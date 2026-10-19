@@ -22,10 +22,6 @@ There are no real project images yet. Each figure is a marked placeholder PNG. R
 | Production Airflow ETL platform on AWS | `public/projects/airflow-etl-aws/schedule.png` | DAG schedule |
 | Computer-vision speed detection API | `public/projects/speed-detection-api/diagram.png` | Architecture diagram |
 | Computer-vision speed detection API | `public/projects/speed-detection-api/service.png` | API and CI release |
-| Load-tested ML APIs and 3-model OCR | `public/projects/ml-api-load-tests/diagram.png` | Load-test diagram |
-| Load-tested ML APIs and 3-model OCR | `public/projects/ml-api-load-tests/results.png` | Latency and success |
-| Report automation and KPI dashboard | `public/projects/report-automation/diagram.png` | Automation flow |
-| Report automation and KPI dashboard | `public/projects/report-automation/dashboard.png` | KPI dashboard screenshot |
 | Distributed trading RPA | `public/projects/trading-rpa/diagram.png` | Architecture diagram |
 | Distributed trading RPA | `public/projects/trading-rpa/miniapp.png` | Telegram Mini App screenshot |
 | Real-time CCTV vehicle monitoring | `public/projects/cctv-vehicle-monitor/diagram.png` | Architecture diagram |

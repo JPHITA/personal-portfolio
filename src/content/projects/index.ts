@@ -7,14 +7,6 @@ import {
   ProjectBody as SpeedBody,
 } from "./speed-detection-api";
 import {
-  meta as loadMeta,
-  ProjectBody as LoadBody,
-} from "./ml-api-load-tests";
-import {
-  meta as reportMeta,
-  ProjectBody as ReportBody,
-} from "./report-automation";
-import {
   meta as tradingMeta,
   ProjectBody as TradingBody,
 } from "./trading-rpa";
@@ -50,7 +42,6 @@ export const skillGroups = [
       "Docker",
       "GitLab CI",
       "unittest",
-      "Locust",
     ],
   },
   {
@@ -64,7 +55,6 @@ export const skillGroups = [
       "Apache Spark",
       "Parquet",
       "Apache Iceberg",
-      "Power BI",
     ],
   },
   {
@@ -90,7 +80,7 @@ export const skillGroups = [
   {
     id: "ml",
     label: "ML",
-    items: ["PyTorch", "YOLO", "scikit-learn", "XGBoost", "OCR"],
+    items: ["PyTorch", "YOLO", "scikit-learn", "XGBoost"],
   },
   {
     id: "automation",
@@ -128,14 +118,12 @@ export const site = {
   description:
     "Backend and data engineer in Medellín, Colombia (UTC-5). Google Cloud Certified Professional Data Engineer building production Python systems, data pipelines, and process automation across AWS and GCP.",
   intro:
-    "Google Cloud Certified Professional Data Engineer. Semi-Senior backend and data engineer in Medellín, Colombia (UTC-5), building production Python systems, data pipelines, and process automation (RPA) across AWS and GCP. Production work includes Apache Airflow platforms on AWS and FastAPI backends that handle frontend-originated user data for PyTorch, YOLO, and OCR models.",
+    "Google Cloud Certified Professional Data Engineer. Semi-Senior backend and data engineer in Medellín, Colombia (UTC-5), building production Python systems, data pipelines, and process automation (RPA) across AWS and GCP. Production work includes Apache Airflow platforms on AWS and FastAPI backends that handle frontend-originated user data and inference with Pytorch and ML models.",
 } as const;
 
 export const projects: Project[] = [
   { ...airflowMeta, Body: AirflowBody },
   { ...speedMeta, Body: SpeedBody },
-  { ...loadMeta, Body: LoadBody },
-  { ...reportMeta, Body: ReportBody },
   { ...tradingMeta, Body: TradingBody },
   { ...cctvMeta, Body: CctvBody },
   { ...purchaseMeta, Body: PurchaseBody },

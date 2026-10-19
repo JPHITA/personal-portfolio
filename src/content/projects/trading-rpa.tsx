@@ -23,7 +23,7 @@ export const meta = {
   title: "Distributed trading RPA",
   summary:
     "Freelance, in development, for a trading client: Playwright on 2 machines × 4 instances, Cloud Run webhooks, and Redis coordination.",
-  lane: "In development · Playwright",
+  lane: "Playwright",
   tags: [
     "Playwright",
     "Go",

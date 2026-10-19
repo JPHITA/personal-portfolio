@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
 import { ChassisPanel, ContactLinks } from "@/components/ChassisShell";
+import { ProjectsCarousel } from "@/components/ProjectsCarousel";
 import {
   certifications,
   projects,
@@ -54,30 +53,16 @@ export default function Home() {
         </div>
       </aside>
 
-      <section className="projects" aria-labelledby="projects-lab">
-        <p id="projects-lab" className="projects-lab">
-          Selected projects
-        </p>
-        <ul className="project-list">
-          {projects.map((p) => (
-            <li key={p.slug}>
-              <Link href={`/projects/${p.slug}`} className="project-link">
-                <span className="lane">{p.lane}</span>
-                <h2>{p.title}</h2>
-                <figure className="project-well">
-                  <Image
-                    src={p.preview.src}
-                    alt={p.preview.alt}
-                    width={960}
-                    height={540}
-                    sizes="(min-width: 768px) 40vw, 90vw"
-                  />
-                </figure>
-                <p>{p.summary}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <section className="projects">
+        <ProjectsCarousel
+          projects={projects.map(({ slug, title, summary, lane, preview }) => ({
+            slug,
+            title,
+            summary,
+            lane,
+            preview,
+          }))}
+        />
       </section>
     </ChassisPanel>
   );

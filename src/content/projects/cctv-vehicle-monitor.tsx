@@ -23,7 +23,7 @@ export const meta = {
   title: "Real-time CCTV vehicle monitoring",
   summary:
     "Working prototype: RTSP and ffmpeg ingest, 2 YOLO models at about 30 FPS, a Redis queue, and records in S3.",
-  lane: "Prototype · YOLO · Redis",
+  lane: "YOLO · Redis",
   tags: ["Python multiprocessing", "YOLO", "Redis", "ffmpeg", "S3"],
   figures,
   preview: { src: figures[0].src, alt: figures[0].alt },
