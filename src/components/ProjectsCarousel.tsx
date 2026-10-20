@@ -175,8 +175,8 @@ export function ProjectsCarousel({ projects }: { projects: ProjectCard[] }) {
                   <Image
                     src={p.preview.src}
                     alt={p.preview.alt}
-                    width={960}
-                    height={540}
+                    width={p.preview.width ?? 960}
+                    height={p.preview.height ?? 540}
                     sizes="(min-width: 768px) 40vw, 90vw"
                   />
                 </figure>

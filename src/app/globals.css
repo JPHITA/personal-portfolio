@@ -513,8 +513,8 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  /* ratio comes from width/height — 16:9 plates stay 16:9; wider proof is not cropped */
+  object-fit: contain;
 }
 
 .project-link h2 {
@@ -683,8 +683,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .detail-figure figcaption {

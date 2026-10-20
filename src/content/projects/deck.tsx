@@ -24,12 +24,12 @@ export function ProjectDeck({ meta }: { meta: ProjectMeta }) {
             <Image
               src={fig.src}
               alt={fig.alt}
-              width={960}
-              height={540}
+              width={fig.width ?? 960}
+              height={fig.height ?? 540}
               priority={i === 0}
               sizes="(min-width: 900px) 55vw, 90vw"
             />
-            <figcaption>{fig.caption}</figcaption>
+            {fig.caption ? <figcaption>{fig.caption}</figcaption> : null}
           </figure>
         ))}
       </div>

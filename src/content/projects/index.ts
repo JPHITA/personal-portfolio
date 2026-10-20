@@ -40,7 +40,6 @@ export const skillGroups = [
       "asyncio",
       "REST APIs",
       "Docker",
-      "GitLab CI",
       "unittest",
     ],
   },

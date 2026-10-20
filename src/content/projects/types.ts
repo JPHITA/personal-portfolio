@@ -5,8 +5,11 @@ export type FigureSlot = {
   /** Public URL, e.g. `/projects/<slug>/diagram.png`. */
   src: string;
   alt: string;
-  /** Visible caption: slot name plus repo path for the drop-in file. */
-  caption: string;
+  /** Visible caption. Omit for a figure with no caption bar. */
+  caption?: string;
+  /** Intrinsic size. Defaults to the 16:9 placeholder plate. */
+  width?: number;
+  height?: number;
 };
 
 export type ProjectMeta = {
@@ -17,7 +20,7 @@ export type ProjectMeta = {
   lane: string;
   tags: string[];
   /** Home tube-well preview — first proof plate. */
-  preview: { src: string; alt: string };
+  preview: { src: string; alt: string; width?: number; height?: number };
   figures: readonly FigureSlot[];
   problem: string;
   approach: string;

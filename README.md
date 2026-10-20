@@ -20,8 +20,7 @@ There are no real project images yet. Each figure is a marked placeholder PNG. R
 |---|---|---|
 | Production Airflow ETL platform on AWS | `public/projects/airflow-etl-aws/diagram.png` | Architecture diagram |
 | Production Airflow ETL platform on AWS | `public/projects/airflow-etl-aws/schedule.png` | DAG schedule |
-| Computer-vision speed detection API | `public/projects/speed-detection-api/diagram.png` | Architecture diagram |
-| Computer-vision speed detection API | `public/projects/speed-detection-api/service.png` | API and CI release |
+| Computer-vision speed detection API | `public/projects/speed-detection-api/pipeline.jpg` | Detection flow |
 | Distributed trading RPA | `public/projects/trading-rpa/diagram.png` | Architecture diagram |
 | Distributed trading RPA | `public/projects/trading-rpa/miniapp.png` | Telegram Mini App screenshot |
 | Real-time CCTV vehicle monitoring | `public/projects/cctv-vehicle-monitor/diagram.png` | Architecture diagram |
@@ -31,7 +30,7 @@ There are no real project images yet. Each figure is a marked placeholder PNG. R
 | Research-grant ML platform | `public/projects/research-grant-ml/diagram.png` | Architecture diagram |
 | Research-grant ML platform | `public/projects/research-grant-ml/frontend.png` | Frontend screenshot |
 
-The home card uses the first image of each project (`diagram.png`). Detail pages list every slot in the caption, including the repo path.
+The home card uses the first image of each project. Detail pages list every slot in the caption, including the repo path. Placeholder slots still do; the speed-detection flow caption describes the diagram.
 
 After replacing a file, restart `npm run dev` if the old plate is still cached, and run `npm run build` before a production deploy so the optimized image updates.
 
