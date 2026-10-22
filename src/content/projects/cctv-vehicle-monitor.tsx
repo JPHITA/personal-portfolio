@@ -1,37 +1,40 @@
 import { ProjectDeck } from "./deck";
-import { figureSlot, type ProjectMeta } from "./types";
+import type { ProjectMeta } from "./types";
 
 const slug = "cctv-vehicle-monitor";
 
+const preview = {
+  src: `/projects/${slug}/preview.jpg`,
+  alt: "Night street under cool-white lamps: a pole-mounted CCTV camera, a steel monitor showing two cars in thin amber detection boxes, and a tray of captured stills.",
+  width: 1280,
+  height: 720,
+} as const;
+
 const figures = [
-  figureSlot(
-    slug,
-    "diagram.png",
-    "Architecture diagram",
-    "RTSP ingest, two YOLO processes, a Redis queue, and S3 for the CCTV prototype",
-  ),
-  figureSlot(
-    slug,
-    "pipeline.png",
-    "Ingest pipeline",
-    "the RTSP, ffmpeg, and YOLO detection path of the vehicle-monitoring prototype",
-  ),
+  {
+    src: `/projects/${slug}/live-flow.png`,
+    alt: "Amber flowchart on a black field: live camera, capture and detect vehicles, no vehicle exits while vehicle detected goes to drop batch, then Redis queue and temp store, track and capture stills, and S3 image store.",
+    caption: `Architecture diagram · public/projects/${slug}/live-flow.png`,
+    width: 1024,
+    height: 572,
+  },
 ] as const;
 
 export const meta = {
   slug,
   title: "Real-time CCTV vehicle monitoring",
   summary:
-    "Working prototype: RTSP and ffmpeg ingest, 2 YOLO models at about 30 FPS, a Redis queue, and records in S3.",
+    "RTSP and ffmpeg ingest, 2 YOLO models at about 30 FPS, a Redis queue, and records in S3.",
   lane: "YOLO · Redis",
   tags: ["Python multiprocessing", "YOLO", "Redis", "ffmpeg", "S3"],
   figures,
-  preview: { src: figures[0].src, alt: figures[0].alt },
+  preview,
   problem:
-    "Live CCTV vehicle monitoring needed detection that could keep up with the streams without blocking storage.",
+    "Live CCTV vehicle monitoring needed detection that could keep up with streaming.",
   approach:
-    "RTSP ingest through ffmpeg, 2 YOLO models in parallel processes (about 30 FPS detection), decoupled with a Redis queue. Records are stored in S3.",
-  outcome: "Working prototype.",
+    "RTSP ingest through ffmpeg, 2 YOLO models in parallel processes, decoupled with a Redis queue. Records are stored in S3.",
+  outcome:
+    "Working prototype. It ingests a real CCTV camera streaming over RTSP, runs 2 YOLO models in parallel processes, uses a Redis queue, stores records in S3, and deployed with Docker.",
 } satisfies ProjectMeta;
 
 export function ProjectBody() {

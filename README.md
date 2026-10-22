@@ -23,12 +23,12 @@ There are no real project images yet. Each figure is a marked placeholder PNG. R
 | Computer-vision speed detection API | `public/projects/speed-detection-api/pipeline.jpg` | Detection flow |
 | Distributed trading RPA | `public/projects/trading-rpa/diagram.png` | Architecture diagram |
 | Distributed trading RPA | `public/projects/trading-rpa/miniapp.png` | Telegram Mini App screenshot |
-| Real-time CCTV vehicle monitoring | `public/projects/cctv-vehicle-monitor/diagram.png` | Architecture diagram |
-| Real-time CCTV vehicle monitoring | `public/projects/cctv-vehicle-monitor/pipeline.png` | Ingest pipeline |
+| Real-time CCTV vehicle monitoring | `public/projects/cctv-vehicle-monitor/live-flow.png` | Architecture diagram |
+| Real-time CCTV vehicle monitoring | `public/projects/cctv-vehicle-monitor/preview.jpg` | Home preview |
 | Purchase prediction for a gaming platform | `public/projects/purchase-prediction/diagram.png` | Model setup |
 | Purchase prediction for a gaming platform | `public/projects/purchase-prediction/results.png` | Recall and precision |
-| Research-grant ML platform | `public/projects/research-grant-ml/diagram.png` | Architecture diagram |
-| Research-grant ML platform | `public/projects/research-grant-ml/frontend.png` | Frontend screenshot |
+| Web platform to access the ML model | `public/projects/research-grant-ml/diagram.png` | Architecture diagram |
+| Web platform to access the ML model | `public/projects/research-grant-ml/preview.jpg` | Home preview |
 
 The home card uses the first image of each project. Detail pages list every slot in the caption, including the repo path. Placeholder slots still do; the speed-detection flow caption describes the diagram.
 

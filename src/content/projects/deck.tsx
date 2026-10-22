@@ -29,7 +29,6 @@ export function ProjectDeck({ meta }: { meta: ProjectMeta }) {
               priority={i === 0}
               sizes="(min-width: 900px) 55vw, 90vw"
             />
-            {fig.caption ? <figcaption>{fig.caption}</figcaption> : null}
           </figure>
         ))}
       </div>

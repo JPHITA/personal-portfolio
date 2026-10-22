@@ -126,8 +126,12 @@ export function ProjectsCarousel({ projects }: { projects: ProjectCard[] }) {
     }
   };
 
-  const from = selectedIndex + 1;
-  const to = Math.min(projects.length, selectedIndex + perPage);
+  const count = projects.length;
+  const from = count === 0 ? 0 : selectedIndex + 1;
+  // ponytail: cap at last project; modulo made the loop seam read backwards
+  const to = count === 0 ? 0 : Math.min(count, selectedIndex + perPage);
+  const rangeLabel =
+    from === to ? `${from} / ${count}` : `${from}–${to} / ${count}`;
 
   return (
     <div
@@ -143,7 +147,7 @@ export function ProjectsCarousel({ projects }: { projects: ProjectCard[] }) {
         </p>
         <div className="project-carousel-controls">
           <p className="project-carousel-status synth-note" aria-live="polite">
-            {from}–{to} / {projects.length}
+            {rangeLabel}
           </p>
           <button
             type="button"

@@ -214,7 +214,8 @@ body {
   font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
   line-height: 1.5;
   color: var(--steel);
-  text-align: justify;
+  /* justify rivers on a phone measure; wide hero keeps the set edge */
+  text-align: start;
 }
 
 @media (min-width: 640px) {
@@ -227,6 +228,7 @@ body {
 @media (min-width: 900px) {
   .hero-copy {
     max-width: min(70ch, 55%);
+    text-align: justify;
   }
 }
 
@@ -389,7 +391,7 @@ body {
 
 .project-carousel-nav {
   margin: 0;
-  padding: 0.35rem 0.1rem;
+  padding: 0.5rem 0.15rem;
   border: none;
   border-bottom: 1px solid rgba(138, 144, 152, 0.45);
   background: transparent;
@@ -452,29 +454,40 @@ body {
 .project-carousel-dots {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.15rem;
   margin-top: 0.75rem;
 }
 
+/* 28px hit; the mark stays a small instrument index */
 .project-carousel-dot {
-  width: 0.55rem;
-  height: 0.55rem;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
   padding: 0;
-  border: 1px solid var(--chassis-edge);
+  border: 0;
   background: transparent;
   cursor: pointer;
+}
+
+.project-carousel-dot::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border: 1px solid var(--chassis-edge);
+  background: transparent;
   transition:
     border-color 160ms ease-out,
     background-color 160ms ease-out,
     box-shadow 160ms ease-out;
 }
 
-.project-carousel-dot:hover,
-.project-carousel-dot:focus-visible {
+.project-carousel-dot:hover::before,
+.project-carousel-dot:focus-visible::before {
   border-color: var(--glow);
 }
 
-.project-carousel-dot.is-active {
+.project-carousel-dot.is-active::before {
   background: var(--glow);
   border-color: var(--glow);
   box-shadow: 0 0 10px rgba(255, 106, 26, 0.35);
@@ -482,7 +495,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .project-carousel-nav,
-  .project-carousel-dot {
+  .project-carousel-dot::before {
     transition: none;
   }
 }
@@ -499,6 +512,11 @@ body {
 .project-link:hover,
 .project-link:focus-visible {
   border-top-color: var(--glow);
+}
+
+/* embla viewport clips an outset ring */
+.project-link:focus-visible {
+  outline-offset: -3px;
 }
 
 .project-well {
@@ -683,16 +701,8 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  /* ratio from width/height — same rule as home wells */
   object-fit: contain;
-}
-
-.detail-figure figcaption {
-  padding: 0.65rem 0.85rem;
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--steel-dim);
-  border-top: 1px solid var(--chassis-edge);
 }
 
 .detail-meta {

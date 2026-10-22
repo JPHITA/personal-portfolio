@@ -104,7 +104,7 @@ export function ChassisCap({ home = false }: { home?: boolean }) {
 export function ChassisFoot() {
   return (
     <footer className="foot">
-      <ContactLinks />
+      <ContactLinks label="Footer contact" />
     </footer>
   );
 }
