@@ -27,11 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: site.name,
       type: "website",
       locale: "en_US",
+      images: ["/opengraph-image"],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description: project.summary,
+      images: ["/twitter-image"],
     },
   };
 }

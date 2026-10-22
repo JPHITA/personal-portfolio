@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Chakra_Petch, IBM_Plex_Mono } from "next/font/google";
-import { site } from "@/content/projects";
+import { Analytics } from "@vercel/analytics/next";
+import { contact, site } from "@/content/projects";
+import { siteOrigin } from "@/lib/site-url";
 import "./globals.css";
 
 const chakra = Chakra_Petch({
@@ -16,8 +18,10 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const title = `${site.name} · ${site.specialty}`;
+const origin = siteOrigin();
 
 export const metadata: Metadata = {
+  metadataBase: origin,
   title: {
     default: title,
     template: `%s · ${site.name}`,
@@ -33,10 +37,27 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title,
     description: site.description,
   },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: site.specialty,
+  description: site.description,
+  email: contact.email.href.slice("mailto:".length),
+  url: origin.origin,
+  image: new URL("/opengraph-image", origin).href,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Medellín",
+    addressCountry: "CO",
+  },
+  sameAs: [contact.linkedin.href, contact.github.href],
 };
 
 export default function RootLayout({
@@ -48,7 +69,16 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${chakra.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
