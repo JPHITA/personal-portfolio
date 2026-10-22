@@ -24,17 +24,17 @@ export const meta = {
   slug,
   title: "Real-time CCTV vehicle monitoring",
   summary:
-    "RTSP and ffmpeg ingest, 2 YOLO models at about 30 FPS, a Redis queue, and records in S3.",
+    "RTSP and FFmpeg ingest, 2 YOLO models at about 30 FPS, a Redis queue, and records in S3.",
   lane: "YOLO · Redis",
-  tags: ["Python multiprocessing", "YOLO", "Redis", "ffmpeg", "S3"],
+  tags: ["Python multiprocessing", "YOLO", "Redis", "FFmpeg", "S3"],
   figures,
   preview,
   problem:
     "Live CCTV vehicle monitoring needed detection that could keep up with streaming.",
   approach:
-    "RTSP ingest through ffmpeg, 2 YOLO models in parallel processes, decoupled with a Redis queue. Records are stored in S3.",
+    "RTSP ingest through FFmpeg, 2 YOLO models in parallel processes, decoupled with a Redis queue. Records are stored in S3.",
   outcome:
-    "Working prototype. It ingests a real CCTV camera streaming over RTSP, runs 2 YOLO models in parallel processes, uses a Redis queue, stores records in S3, and deployed with Docker.",
+    "Working prototype. It ingests a real CCTV camera streaming over RTSP, runs 2 YOLO models in parallel processes, uses a Redis queue, stores records in S3, and deploys with Docker.",
 } satisfies ProjectMeta;
 
 export function ProjectBody() {

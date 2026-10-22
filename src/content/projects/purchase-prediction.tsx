@@ -21,7 +21,7 @@ export const meta = {
   slug,
   title: "Purchase prediction for a gaming platform",
   summary:
-    "Freelance classifiers on a gaming platform where the data is imbalanced, only about 3.5% of users buy: about 59% recall on buyers on a non overfitted model.",
+    "Freelance classifiers on a gaming platform where the data is imbalanced (only about 3.5% of users buy): about 59% recall on buyers without overfitting.",
   lane: "XGBoost · scikit-learn",
   tags: ["scikit-learn", "XGBoost", "Python"],
   figures: [diagram],
@@ -31,7 +31,7 @@ export const meta = {
   approach:
     "Random Forest and XGBoost classifiers trained for that minority of buyers.",
   outcome:
-    "About 59% recall on buyers. The data is imbalanced, only about 3.5% of users buy, and the model was not overfit.",
+    "About 59% recall on buyers without overfitting. The data is imbalanced: only about 3.5% of users buy.",
 } satisfies ProjectMeta;
 
 export function ProjectBody() {

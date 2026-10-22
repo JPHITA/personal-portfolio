@@ -27,7 +27,7 @@ export const meta = {
   figures: [diagram],
   preview,
   problem:
-    "A public-entity research contest needed a productivity-measurement model online reducing cloud costs.",
+    "A public-entity research contest needed a productivity-measurement model online while reducing cloud costs.",
   approach:
     "Firebase (Cloud Functions, Firestore, Storage, and Hosting), a React frontend, and a Cloudflare domain, kept on the free tier.",
   outcome:

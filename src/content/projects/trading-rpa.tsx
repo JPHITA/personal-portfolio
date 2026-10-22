@@ -21,7 +21,7 @@ export const meta = {
   slug,
   title: "Distributed trading RPA",
   summary:
-    "Freelance for a trading client: Playwright automation on multiple machines with concurrent instances, GCP cloud Run webhooks, and Redis coordination.",
+    "Freelance for a trading client: Playwright automation on multiple machines with concurrent instances, Cloud Run webhooks, and Redis coordination.",
   lane: "Playwright · GCP · Redis",
   tags: [
     "Playwright",
