@@ -70,6 +70,12 @@ export default function RootLayout({
       className={`${chakra.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         {children}
         <Analytics />
       </body>
