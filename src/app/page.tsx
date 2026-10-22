@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ChassisPanel, ContactLinks } from "@/components/ChassisShell";
 import { ProjectsCarousel } from "@/components/ProjectsCarousel";
 import {
@@ -6,6 +7,10 @@ import {
   site,
   skillGroups,
 } from "@/content/projects";
+
+export const metadata: Metadata = {
+  title: { absolute: "Juan Piedrahita · Backend & Data" },
+};
 
 export default function Home() {
   return (
