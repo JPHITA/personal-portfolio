@@ -117,7 +117,7 @@ export const site = {
   description:
     "Backend and data engineer in Medellín, Colombia (UTC-5). Google Cloud Certified Professional Data Engineer building production Python systems, data pipelines, and process automation across AWS and GCP.",
   intro:
-    "Google Cloud Certified Professional Data Engineer. Semi-Senior backend and data engineer in Medellín, Colombia (UTC-5), building production Python systems, data pipelines, and process automation (RPA) across AWS and GCP. Production work includes Apache Airflow platforms on AWS and FastAPI backends that handle frontend-originated user data and inference with Pytorch and ML models.",
+    "Google Cloud Certified Professional Data Engineer. Backend and data engineer in Medellín, Colombia (UTC-5), building production Python systems, data pipelines, and process automation (RPA) across AWS and GCP. Production work includes Apache Airflow platforms on AWS and FastAPI backends that handle frontend-originated user data and inference with PyTorch and ML models.",
 } as const;
 
 export const projects: Project[] = [
