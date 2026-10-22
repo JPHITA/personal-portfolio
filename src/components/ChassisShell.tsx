@@ -73,7 +73,9 @@ export function ContactLinks({
           >
             {withIcons ? <ContactIcon label={c.label} /> : null}
             {c.label}
-            <span className="sr-only"> ({c.note})</span>
+            {c.href.startsWith("http") ? (
+              <span className="sr-only"> (opens in a new tab)</span>
+            ) : null}
           </a>
         </span>
       ))}
@@ -102,8 +104,7 @@ export function ChassisCap({ home = false }: { home?: boolean }) {
 export function ChassisFoot() {
   return (
     <footer className="foot">
-      <ContactLinks />
-      <span className="foot-mark">Nixie laboratory counter</span>
+      <ContactLinks label="Footer contact" />
     </footer>
   );
 }

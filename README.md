@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Juan Nicolas Piedrahita Salas
 
-## Getting Started
+Personal portfolio — backend and data engineer. Next.js app, Nixie Counter chassis.
 
-First, run the development server:
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev    # http://localhost:3000
+npm run lint
+npm run build
+npm run start  # production server after build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project images
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+There are no real project images yet. Each figure is a marked placeholder PNG. Replace the file in place, keep the same name, and update the `alt` text in the matching module under `src/content/projects/` so it describes the real image.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Project | Drop-in path | Slot |
+|---|---|---|
+| Production Airflow ETL platform on AWS | `public/projects/airflow-etl-aws/diagram.png` | Architecture diagram |
+| Production Airflow ETL platform on AWS | `public/projects/airflow-etl-aws/schedule.png` | DAG schedule |
+| Computer-vision speed detection API | `public/projects/speed-detection-api/pipeline.jpg` | Detection flow |
+| Distributed trading RPA | `public/projects/trading-rpa/diagram.png` | Architecture diagram |
+| Distributed trading RPA | `public/projects/trading-rpa/miniapp.png` | Telegram Mini App screenshot |
+| Real-time CCTV vehicle monitoring | `public/projects/cctv-vehicle-monitor/live-flow.png` | Architecture diagram |
+| Real-time CCTV vehicle monitoring | `public/projects/cctv-vehicle-monitor/preview.jpg` | Home preview |
+| Purchase prediction for a gaming platform | `public/projects/purchase-prediction/diagram.png` | Model setup |
+| Purchase prediction for a gaming platform | `public/projects/purchase-prediction/results.png` | Recall and precision |
+| Web platform to access the ML model | `public/projects/research-grant-ml/diagram.png` | Architecture diagram |
+| Web platform to access the ML model | `public/projects/research-grant-ml/preview.jpg` | Home preview |
 
-## Learn More
+The home card uses the first image of each project. Detail pages list every slot in the caption, including the repo path. Placeholder slots still do; the speed-detection flow caption describes the diagram.
 
-To learn more about Next.js, take a look at the following resources:
+After replacing a file, restart `npm run dev` if the old plate is still cached, and run `npm run build` before a production deploy so the optimized image updates.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Adding a project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `AGENTS.md`. Copy `src/content/projects/airflow-etl-aws.tsx`, register it in `src/content/projects/index.ts`, and add PNGs under `public/projects/<slug>/`.

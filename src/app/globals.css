@@ -121,11 +121,17 @@ body {
 .cap {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.75rem;
   align-items: flex-start;
   justify-content: space-between;
   border-bottom: 1px solid var(--chassis-edge);
   padding-bottom: 1rem;
+}
+
+.cap-name {
+  min-width: 0;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -208,6 +214,8 @@ body {
   font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
   line-height: 1.5;
   color: var(--steel);
+  /* justify rivers on a phone measure; wide hero keeps the set edge */
+  text-align: start;
 }
 
 @media (min-width: 640px) {
@@ -220,6 +228,7 @@ body {
 @media (min-width: 900px) {
   .hero-copy {
     max-width: min(70ch, 55%);
+    text-align: justify;
   }
 }
 
@@ -283,53 +292,64 @@ body {
 }
 
 .skills-list li {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   font-size: 0.9375rem;
   color: var(--plate-soft);
 }
 
-.skills-more {
-  margin-top: 0.5rem;
+.certs {
+  margin-top: 0.15rem;
 }
 
-.skills-more summary {
-  cursor: pointer;
-  width: fit-content;
+.cert-list {
+  list-style: none;
+  margin: 0 0 0.95rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cert-list li {
+  max-width: 52ch;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--steel);
+}
+
+.cert-list .cert-lead {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--glow);
+}
+
+.skill-groups {
+  display: grid;
+  gap: 0.9rem 1.75rem;
+}
+
+.skill-group {
+  min-width: 0;
+}
+
+.skill-group-label {
+  margin: 0 0 0.35rem;
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--steel-dim);
-  list-style: none;
 }
 
-.skills-more summary::-webkit-details-marker {
-  display: none;
+.skill-group .skills-list {
+  gap: 0.35rem 1.25rem;
 }
 
-.skills-more summary::before {
-  content: "+ ";
-  color: var(--glow);
-}
-
-.skills-more[open] summary::before {
-  content: "− ";
-}
-
-.skills-more summary:hover,
-.skills-more summary:focus-visible {
-  color: var(--glow);
-}
-
-.skills-more .skills-list {
-  margin-top: 0.5rem;
-}
-
-.idx {
-  display: inline-block;
-  min-width: 1.75rem;
-  margin-right: 0.35rem;
-  color: var(--steel-dim);
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
+@media (min-width: 640px) {
+  .skill-groups {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .projects {
@@ -339,25 +359,144 @@ body {
 }
 
 .projects-lab {
-  margin: 0 0 0.75rem;
+  margin: 0;
   font-size: 0.6875rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--glow);
 }
 
-.project-list {
+.project-carousel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-carousel-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0.85rem;
+}
+
+.project-carousel-status {
+  margin: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+.project-carousel-nav {
+  margin: 0;
+  padding: 0.5rem 0.15rem;
+  border: none;
+  border-bottom: 1px solid rgba(138, 144, 152, 0.45);
+  background: transparent;
+  color: var(--steel);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color 160ms ease-out,
+    border-color 160ms ease-out,
+    text-shadow 160ms ease-out;
+}
+
+.project-carousel-nav:hover:not(:disabled),
+.project-carousel-nav:focus-visible:not(:disabled) {
+  color: var(--glow);
+  border-bottom-color: rgba(255, 106, 26, 0.55);
+  text-shadow: 0 0 12px rgba(255, 106, 26, 0.35);
+}
+
+.project-carousel-nav:disabled {
+  color: var(--steel-dim);
+  border-bottom-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* Embla viewport + flex track — 1 tube mobile, 2 from 768px */
+.project-carousel-viewport {
+  overflow: hidden;
+}
+
+.project-carousel-track {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
+  display: flex;
   gap: 0.75rem;
+  touch-action: pan-y pinch-zoom;
+}
+
+.project-carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
 
 @media (min-width: 768px) {
-  .project-list {
-    grid-template-columns: 1fr 1fr;
+  .project-carousel-track {
     gap: 1rem;
+  }
+
+  .project-carousel-slide {
+    flex: 0 0 calc((100% - 1rem) / 2);
+  }
+}
+
+.project-carousel-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  margin-top: 0.75rem;
+}
+
+/* 28px hit; the mark stays a small instrument index */
+.project-carousel-dot {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.project-carousel-dot::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border: 1px solid var(--chassis-edge);
+  background: transparent;
+  transition:
+    border-color 160ms ease-out,
+    background-color 160ms ease-out,
+    box-shadow 160ms ease-out;
+}
+
+.project-carousel-dot:hover::before,
+.project-carousel-dot:focus-visible::before {
+  border-color: var(--glow);
+}
+
+.project-carousel-dot.is-active::before {
+  background: var(--glow);
+  border-color: var(--glow);
+  box-shadow: 0 0 10px rgba(255, 106, 26, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-carousel-nav,
+  .project-carousel-dot::before {
+    transition: none;
   }
 }
 
@@ -375,6 +514,11 @@ body {
   border-top-color: var(--glow);
 }
 
+/* embla viewport clips an outset ring */
+.project-link:focus-visible {
+  outline-offset: -3px;
+}
+
 .project-well {
   margin: 0.5rem 0 0.65rem;
   background: var(--tube-well);
@@ -387,8 +531,8 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  /* ratio comes from width/height — 16:9 plates stay 16:9; wider proof is not cropped */
+  object-fit: contain;
 }
 
 .project-link h2 {
@@ -396,6 +540,8 @@ body {
   font-family: var(--font-chakra), system-ui, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: break-word;
   color: var(--plate);
 }
 
@@ -469,10 +615,6 @@ body {
   color: var(--chassis-edge);
 }
 
-.foot-mark {
-  color: var(--steel-dim);
-}
-
 /* Project detail — full chassis rail; Body owns copy + figure banks */
 .detail {
   flex: 1 1 auto;
@@ -485,12 +627,12 @@ body {
 
 .detail-title {
   margin: 0;
+  width: 100%;
   font-family: var(--font-chakra), system-ui, sans-serif;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.1;
   color: var(--plate);
-  max-width: min(28ch, 100%);
 }
 
 /* title + deck = one story unit; meta keeps fuller separation below */
@@ -559,17 +701,8 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-.detail-figure figcaption {
-  padding: 0.65rem 0.85rem;
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--steel-dim);
-  border-top: 1px solid var(--chassis-edge);
+  /* ratio from width/height — same rule as home wells */
+  object-fit: contain;
 }
 
 .detail-meta {
