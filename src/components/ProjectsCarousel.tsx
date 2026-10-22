@@ -172,7 +172,7 @@ export function ProjectsCarousel({ projects }: { projects: ProjectCard[] }) {
 
       <div className="project-carousel-viewport" ref={emblaRef}>
         <ul className="project-carousel-track">
-          {projects.map((p, index) => (
+          {projects.map((p) => (
             <li className="project-carousel-slide" key={p.slug}>
               <Link href={`/projects/${p.slug}`} className="project-link">
                 <span className="lane">{p.lane}</span>
@@ -184,7 +184,7 @@ export function ProjectsCarousel({ projects }: { projects: ProjectCard[] }) {
                     width={p.preview.width ?? 960}
                     height={p.preview.height ?? 540}
                     sizes={CARD_IMAGE_SIZES}
-                    loading={index === 0 ? "eager" : "lazy"}
+                    loading="lazy"
                   />
                 </figure>
                 <p>{p.summary}</p>
