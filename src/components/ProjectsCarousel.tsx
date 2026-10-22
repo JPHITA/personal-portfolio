@@ -11,14 +11,12 @@ import {
   useState,
   type KeyboardEvent,
 } from "react";
+import type { ProjectMeta } from "@/content/projects/types";
 
-export type ProjectCard = {
-  slug: string;
-  title: string;
-  summary: string;
-  lane: string;
-  preview: { src: string; alt: string };
-};
+export type ProjectCard = Pick<
+  ProjectMeta,
+  "slug" | "title" | "summary" | "lane" | "preview"
+>;
 
 const AUTOPLAY_DELAY_MS = 5000;
 
@@ -128,7 +126,7 @@ export function ProjectsCarousel({ projects }: { projects: ProjectCard[] }) {
 
   const count = projects.length;
   const from = count === 0 ? 0 : selectedIndex + 1;
-  // ponytail: cap at last project; modulo made the loop seam read backwards
+
   const to = count === 0 ? 0 : Math.min(count, selectedIndex + perPage);
   const rangeLabel =
     from === to ? `${from} / ${count}` : `${from}–${to} / ${count}`;
