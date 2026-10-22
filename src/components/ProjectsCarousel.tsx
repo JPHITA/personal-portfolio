@@ -20,6 +20,10 @@ export type ProjectCard = Pick<
 
 const AUTOPLAY_DELAY_MS = 5000;
 
+// Panel padding + border, then half the track minus the 768px gap.
+const CARD_IMAGE_SIZES =
+  "(max-width: 767px) calc(100vw - 2.5rem - 20px), calc((100vw - 6rem - 24px - 1rem) / 2)";
+
 function usePerPage() {
   // ponytail: status range only — slide widths come from CSS
   const [perPage, setPerPage] = useState(1);
@@ -168,7 +172,7 @@ export function ProjectsCarousel({ projects }: { projects: ProjectCard[] }) {
 
       <div className="project-carousel-viewport" ref={emblaRef}>
         <ul className="project-carousel-track">
-          {projects.map((p) => (
+          {projects.map((p, index) => (
             <li className="project-carousel-slide" key={p.slug}>
               <Link href={`/projects/${p.slug}`} className="project-link">
                 <span className="lane">{p.lane}</span>
@@ -179,7 +183,8 @@ export function ProjectsCarousel({ projects }: { projects: ProjectCard[] }) {
                     alt={p.preview.alt}
                     width={p.preview.width ?? 960}
                     height={p.preview.height ?? 540}
-                    sizes="(min-width: 768px) 40vw, 90vw"
+                    sizes={CARD_IMAGE_SIZES}
+                    loading={index === 0 ? "eager" : "lazy"}
                   />
                 </figure>
                 <p>{p.summary}</p>
